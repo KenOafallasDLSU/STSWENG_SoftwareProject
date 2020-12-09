@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-/dist
 
 /tests/e2e/reports/
 selenium-debug.log
@@ -109,7 +108,6 @@ typings/
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
