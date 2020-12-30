@@ -3,23 +3,52 @@
     <b-button v-b-toggle.sidebar id="menu"><b-icon-caret-right-fill></b-icon-caret-right-fill></b-button>
     <b-sidebar id="sidebar" title="Check with Me" bg-variant="dark" text-variant="light">
       <div id="s-contents" class="px-3 py-2">
-        <h3>Play</h3>
-        <h3>Profile</h3>
-        <h3>Leaderboard</h3>
-        <h3>Logout</h3>
+        <router-link to="/" class="router-link">
+          <h3 class="cursor-pointer text-white">Play</h3>
+        </router-link>
+        <router-link to="/profile" class="router-link">
+          <h3 class="cursor-pointer text-white">Profile</h3>
+        </router-link>
+        <router-link to="/leaderboard" class="router-link">
+          <h3 class="cursor-pointer text-white">Leaderboard</h3>
+        </router-link>
+        <router-link to="/help" class="router-link">
+          <h3 class="cursor-pointer text-white">How to Play</h3>
+        </router-link>
+        <router-link to="/login" class="router-link" @click.native="logout">
+          <h3 class="cursor-pointer text-white">Logout</h3>
+        </router-link>
       </div>
     </b-sidebar>
   </div>  
 </template>
 
 <script>
+import firebase from 'firebase'
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
-  name: 'Sidebar'
+  name: 'Sidebar',
+  methods: {
+    ...mapActions(['logoutUser']),
+    logout () {
+      firebase.auth().signOut()
+        .then(() => {
+          this.logoutUser()
+          this.$router.push('/login')
+        })
+    }
+  }
 }
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Jura&family=Raleway?display=swap');
+
+.router-link {
+  text-decoration: none;
+  border-bottom: 0
+}
 
 #menu {
   position: absolute;

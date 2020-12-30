@@ -1,5 +1,6 @@
 <template>
   <td :class="highlight" class="square" @click="onSquareClicked()" v-if="isDark">
+    <!-- {{row-1}}{{col-1}} -->
     <div id="checker-black" class="chip black-chip" v-show="hasBlackChip">
       <img class="king" src="../../public/assets/king.png" v-show="hasBlackKing"/>
     </div>
@@ -109,7 +110,6 @@ export default {
     cancelCurrentMove () {
       const bContainsPiece = this.hasBlackChip || this.hasWhiteChip || this.hasWhiteKing || this.hasBlackKing
       if (bContainsPiece) {
-        console.log('contains piece')
         this.aHighlight({
           nRow: this.row, 
           nCol: this.col, 
@@ -117,13 +117,11 @@ export default {
           bHasWhiteKing: this.hasWhiteKing 
         })
       } else { // Illegal move
-        console.log('does not contain piece')
         this.aUnhighlight(null)
       }
     },
 
     onSquareClicked () {
-      console.log('Highlighting square')
       if(this.bActiveGame) {
         const source = this.firstClick
         const bContainsPiece = this.hasBlackChip || this.hasWhiteChip || this.hasWhiteKing || this.hasBlackKing
@@ -141,11 +139,9 @@ export default {
     
           // Check for move or capture attempts. No legality checking
           if (coords.nRow === coords.nDestRow && coords.nCol === coords.nDestCol) {
-            console.log("welcome")
             this.aUnhighlight(null)
           } else if (bIsKingMovement) {
             if (this.isKingMoveAttempt(source, coords)) {
-              console.log('king move attempt')
               this.aKingMovement(coords)
             } else if (this.isKingCaptureAttempt(source, coords)) {
               this.aKingCapturePiece(coords)
@@ -163,7 +159,6 @@ export default {
           }
         } else {
           if (bContainsPiece) {
-            console.log('is Selected')
             this.aHighlight({ 
               nRow: this.row, 
               nCol: this.col, 
@@ -172,27 +167,21 @@ export default {
               bHasBlackChip: this.hasBlackChip,
               bHasBlackKing: this.hasBlackKing
             })
-            console.log(this.isSelected)
           }
         }
 
         let bWhiteStuck = checkIfWhiteStuck(this.board)
         let bBlackStuck = checkIfBlackStuck(this.board)
         if(bWhiteStuck && bBlackStuck) {
-          console.log("DRAW!")
           this.aSetActiveGame(false)
           this.aSetWinner('D')
         } else if (bWhiteStuck || this.whiteCount === 0) {
-          console.log("BLACK WINS!")
           this.aSetActiveGame(false)
           this.aSetWinner('B')
         } else if (bBlackStuck || this.blackCount === 0) {
-          console.log("WHITE WINS!")
           this.aSetActiveGame(false)
           this.aSetWinner('W')
-        } else {
-          //console.log("No winner yet")
-        }
+        } else {}
       }
     },
 
