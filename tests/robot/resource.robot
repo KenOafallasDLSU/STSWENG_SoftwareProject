@@ -7,7 +7,7 @@ Library             SeleniumLibrary
 
 *** Variables ***
 ${SERVER}             localhost:8080
-${BROWSER}            Chrome 
+${BROWSER}            Chrome
 ${DELAY}              0
 ${VALID FIRSTNAME}    GG
 ${VALID LASTNAME}     WP
@@ -27,7 +27,7 @@ ${GAME LOBBY URL}     http://${SERVER}/#/
 ${PROFILE URL}        http://${SERVER}/#/profile
 ${LEADERBOARD URL}    http://${SERVER}/#/leaderboard
 ${INSTRUCTION URL}    http://${SERVER}/#/help
-${CHANGEPW URL}    http://${SERVER}/#/change-password
+${CHANGEPW URL}       http://${SERVER}/#/change-password
 
 *** keywords ***
 Open Browser to Login Page
@@ -88,10 +88,16 @@ Input Confirm Password
 
 Click Login Button
     Set Selenium Speed              3
+    ###   Temporary
     Click Button                    btnSubmit
+
+Click Login here Text
+    Set Selenium Speed              3
+    Click Element                   linkLogin
 
 Click Register Button
     Set Selenium Speed              3
+    ###   Temporary
     Click Button                    btnSubmit
 
 Click Register now Text
@@ -104,23 +110,36 @@ Click Sidenav
 
 Click Play
     Set Selenium Speed              3
-    Click Element                   locator
+    ###   Temporary
+    Click Element                   css=.router-link:nth-child(1) > .cursor-pointer
 
 Click Profile
     Set Selenium Speed              3
-    Click Element                   locator
+    ###   Temporary
+    Click Element                   css=.router-link:nth-child(2) > .cursor-pointer
 
 Click Leaderboard
     Set Selenium Speed              3
-    Click Element                   locator
+    ###   Temporary
+    Click Element                   css=.router-link:nth-child(3) > .cursor-pointer
+
+Click Triangle Right Icon
+    Set Selenium Speed              3
+    Click Element                   class:triangle-right
 
 Click How to Play
     Set Selenium Speed              3
-    Click Element                   locator
+    ###   Temporary
+    Click Element                   css=.router-link:nth-child(4) > .cursor-pointer
+
+Click Same Field
+    Set Selenium Speed              3
+    Click Element                   css=.router-link-exact-active > .cursor-pointer
 
 Click Logout
     Set Selenium Speed              3
-    Click Element                   locator
+    ###   Temporary
+    Click Element                   css=.router-link:nth-child(5) > .cursor-pointer
 
 Click Change Password
     Set Selenium Speed              3
@@ -163,6 +182,12 @@ Leaderboard Page Should Be Open
     Element Should be Visible       LeaderboardTable
     Element Should be Visible       CriteriaSelect
 
+Rank Username And Score Should Be Visible
+    Set Selenium Speed              0
+    Element Should be Visible       class:leaderRank
+    Element Should be Visible       class:leaderName
+    Element Should be Visible       class:leaderScore
+
 Instruction Page Should Be Open
     Location Should Be              ${INSTRUCTION URL}
     Set Selenium Speed              0
@@ -183,5 +208,10 @@ Element Message Open Login
 
 Element Message Open Register
     [Arguments]   ${Error}
-    Element Text Should Be          registerError    ${Error}
+    Element Text Should Be          registerError         ${Error}
+    Set Selenium Speed              0
+
+Table Header Leaderboard
+    [Arguments]   ${Criteria}
+    Element Text Should Be          headerScore           ${Criteria}
     Set Selenium Speed              0

@@ -15,7 +15,7 @@ Staying on Profile Page after Profile text is clicked
     Click Profile
     Profile Page Should Be Open
     Click Sidenav
-    Click Profile
+    Click Same Field
     Profile Page Should Be Open
     [Teardown]                    Close Browser
 
@@ -81,5 +81,5 @@ Redirecting URL to Change Password Page after Change password text is clicked
     Click Profile
     Profile Page Should Be Open
     Click Change Password
-    Login Page Should Be Open
+    Change Password Page Should Be Open
     [Teardown]                    Close Browser

@@ -91,3 +91,9 @@ Redirecting URL to Game Lobby Page after successful registration
     Click Register Button
     Game Lobby Page Should Be Open
     [Teardown]                      Close Browser
+
+Redirecting URL to Login Page after Login here text is clicked
+    Open Browser to Register Page
+    Click Login here Text
+    Login Page Should Be Open
+    [Teardown]                      Close Browser

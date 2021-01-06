@@ -54,7 +54,7 @@ Staying on Instruction Page after How to Play text is clicked
     Click How to Play
     Instruction Page Should Be Open
     Click Sidenav
-    Click How to Play
+    Click Same Field
     Instruction Page Should Be Open
     [Teardown]                    Close Browser
 
