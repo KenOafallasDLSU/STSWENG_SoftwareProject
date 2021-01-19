@@ -22,6 +22,8 @@ ${INVALID USER}       GGWP1234!
 ${VALID PASSWORD}     GgWp123456!
 ${NEW VALID PASSWORD} GGWP123456!
 ${INVALID PASSWORD}   1234
+${VALID ROOM}         t3st room
+${INVALID ROOM}       Michiko Gomi's Room
 ${LOGIN URL}          http://${SERVER}/#/login
 ${REGISTER URL}       http://${SERVER}/#/register
 ${GAME LOBBY URL}     http://${SERVER}/#/
@@ -96,6 +98,11 @@ Input Confirm New Password
     [Arguments]   ${ConfirmPassword}
     Input Text    confirm-password   ${ConfirmPassword}
 
+Input Room Name
+    [Arguments]   ${RoomName}
+    ### Temporary
+    Input Text    room-name   ${RoomName}
+
 Click Login Button
     Set Selenium Speed              3
     ###   Temporary
@@ -142,6 +149,10 @@ Click Triangle Right Icon
     Set Selenium Speed              3
     Click Element                   class:triangle-right
 
+Click Triangle Left Icon
+    Set Selenium Speed              3
+    Click Element                   class:triangle-left
+
 Click How to Play
     Set Selenium Speed              3
     ###   Temporary
@@ -160,8 +171,45 @@ Click Change Password
     Set Selenium Speed              3
     Click Element                   change-pw
 
+Click Create Room
+    Set Selenium Speed              3
+    Click Element                   headerButton
+
+Click Create
+    Set Selenium Speed              3
+    ### Temporary
+    Click Element                   btnSubmit
+
+SELECT 10 MIN
+    Set Selenium Speed              3
+    ### Temporary
+    Click Element                   btnSubmit
+
+SELECT 5 MIN
+    Set Selenium Speed              3
+    ### Temporary
+    Click Element                   btnSubmit
+
+SELECT 3 MIN
+    Set Selenium Speed              3
+    ### Temporary
+    Click Element                   btnSubmit
+
+SELECT 1 MIN
+    Set Selenium Speed              3
+    ### Temporary
+    Click Element                   btnSubmit
+    
 Game Lobby Page Should Be Open
     Location Should Be              ${GAME LOBBY URL}
+    Set Selenium Speed              0
+    Element Should be Visible       GameLobbyTable
+    Element Should be Visible       headerName
+    Element Should be Visible       headerHost
+    Element Should be Visible       headerButtonCont
+
+Waiting Room Page Should Be Open
+    ### Temporary
     Set Selenium Speed              0
     Element Should be Visible       GameLobbyTable
     Element Should be Visible       headerName
@@ -240,13 +288,31 @@ Table Header Leaderboard
     Element Text Should Be          headerScore           ${Criteria}
     Set Selenium Speed              0
 
+Game Lobby Page Number
+    [Arguments]   ${Criteria}
+    Element Text Should Be          criteriaLabel           ${Criteria}
+    Set Selenium Speed              0
+
 Element Message Open ChangePW
     [Arguments]   ${Error}
     Element Text Should Be          loginErrorMessages    ${Error}
     Set Selenium Speed              0
 
-
 Element Message Open NewPW
     [Arguments]   ${Error}
     Element Text Should Be          loginErrorMessages    ${Error}
     Set Selenium Speed              0
+
+Element Message Open Create
+    [Arguments]   ${Error}
+    ### Temporary
+    Element Text Should Be          loginErrorMessages    ${Error}
+    Set Selenium Speed              0
+
+Create Button Enabled
+    ### Temporary
+    Element Should Be Enabled       btnSubmit
+
+Create Button Disabled
+    ### Temporary
+    Element Should Be Disabled      btnSubmit
