@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       A test suite with a single test for valid login.
+Documentation       Resources for Robot Tests
 ###
 ###                 This test has a workflow that is created using keywords.
 ###                 directly from SeleniumLibrary
@@ -20,6 +20,7 @@ ${EXISTING USER}      GGWP1234
 ${VALID USER}         GGWP123456
 ${INVALID USER}       GGWP1234!
 ${VALID PASSWORD}     GgWp123456!
+${NEW VALID PASSWORD} GGWP123456!
 ${INVALID PASSWORD}   1234
 ${LOGIN URL}          http://${SERVER}/#/login
 ${REGISTER URL}       http://${SERVER}/#/register
@@ -28,6 +29,7 @@ ${PROFILE URL}        http://${SERVER}/#/profile
 ${LEADERBOARD URL}    http://${SERVER}/#/leaderboard
 ${INSTRUCTION URL}    http://${SERVER}/#/help
 ${CHANGEPW URL}       http://${SERVER}/#/change-password
+${CHANGEPW2 URL}      http://${SERVER}/#/change-password/confirm
 
 *** keywords ***
 Open Browser to Login Page
@@ -86,6 +88,14 @@ Input Confirm Password
     [Arguments]   ${ConfirmPassword}
     Input Text    confirmPassword   ${ConfirmPassword}
 
+Input New Password
+    [Arguments]   ${Password}
+    Input Text    password   ${Password}
+
+Input Confirm New Password
+    [Arguments]   ${ConfirmPassword}
+    Input Text    confirm-password   ${ConfirmPassword}
+
 Click Login Button
     Set Selenium Speed              3
     ###   Temporary
@@ -96,6 +106,11 @@ Click Login here Text
     Click Element                   linkLogin
 
 Click Register Button
+    Set Selenium Speed              3
+    ###   Temporary
+    Click Button                    btnSubmit
+
+Click Continue Button
     Set Selenium Speed              3
     ###   Temporary
     Click Button                    btnSubmit
@@ -148,9 +163,10 @@ Click Change Password
 Game Lobby Page Should Be Open
     Location Should Be              ${GAME LOBBY URL}
     Set Selenium Speed              0
-    Element Should be Visible       table
-    Element Should be Visible       p1-details
-    Element Should be Visible       p2-details
+    Element Should be Visible       GameLobbyTable
+    Element Should be Visible       headerName
+    Element Should be Visible       headerHost
+    Element Should be Visible       headerButtonCont
 
 Register Page Should Be Open
     Location Should Be              ${REGISTER URL}
@@ -201,6 +217,14 @@ Change Password Page Should Be Open
     Element Should be Visible       password
     Element Should be Visible       go-back
 
+New Password Page Should Be Open
+    Location Should Be              ${CHANGEPW2 URL}
+    Set Selenium Speed              0
+    Element Should be Visible       sectionLoginForm
+    Element Should be Visible       password
+    Element Should be Visible       confirm-password
+    Element Should be Visible       go-back
+
 Element Message Open Login
     [Arguments]   ${Error}
     Element Text Should Be          loginErrorMessages    ${Error}
@@ -214,4 +238,15 @@ Element Message Open Register
 Table Header Leaderboard
     [Arguments]   ${Criteria}
     Element Text Should Be          headerScore           ${Criteria}
+    Set Selenium Speed              0
+
+Element Message Open ChangePW
+    [Arguments]   ${Error}
+    Element Text Should Be          loginErrorMessages    ${Error}
+    Set Selenium Speed              0
+
+
+Element Message Open NewPW
+    [Arguments]   ${Error}
+    Element Text Should Be          loginErrorMessages    ${Error}
     Set Selenium Speed              0

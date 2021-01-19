@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       A test suite with tests for login.
+Documentation       A test suite with tests for instructions.
 ###
 ###                 This test has a workflow that is created using keywords.
 ###                 directly from SeleniumLibrary
