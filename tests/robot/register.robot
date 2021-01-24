@@ -34,8 +34,7 @@ Displaying of different types of error messages during registration if invalid i
     Clear Element Text              regUsername
     Input Register Username         ${INVALID USER}
     Click Register Button
-    ###   No period in Username must contain letters and/or numbers only, and must be 8-20 characters long(.)
-    Element Message Open Register   Username must contain letters and/or numbers only, and must be 8-20 characters long
+    Element Message Open Register   Username must contain letters and/or numbers only, and must be 8-20 characters long.
     Clear Element Text              regUsername
     Input Register Username         ${EXISTING USER}
     Click Register Button
