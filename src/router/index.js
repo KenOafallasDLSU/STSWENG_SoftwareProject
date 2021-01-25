@@ -8,7 +8,7 @@ import Leaderboard from '../views/Leaderboard.vue'
 import ChangePassword from '../views/ChangePassword.vue'
 import ChangePasswordConfirm from '../views/ChangePasswordConfirm.vue'
 import GameLobby from '../views/GameLobby.vue'
-import Room from '../views/Room.vue'
+import WaitingRoom from '../views/WaitingRoom.vue'
 import Help from '../views/Help.vue'
 import firebase from  'firebase'
 import authStore from '@/store/modules/auth'
@@ -72,9 +72,15 @@ const routes = [
   },
   {
     path: '/room/:id',
-    name: 'Room',
-    component: Room,
+    name: 'WaitingRoom',
+    component: WaitingRoom,
     meta: { requiresNotAuth: false }
+  },
+  {
+    path: '/matts',
+    name: 'MattsSandbox',
+    component: Home,
+    meta: { requiresAuth: true }
   }
 ]
 
@@ -88,7 +94,7 @@ router.beforeEach(async (to, from, next) => {
     next({ name: 'Login' })
   } 
   else if (to.meta.requiresNotAuth && user) {
-    console.log('called ')
+    //console.log('called ')
     next({ name: 'Home' })
   } 
   else {

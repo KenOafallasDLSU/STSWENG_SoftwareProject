@@ -17,7 +17,7 @@
             <div id="name-label">
               Room Name
             </div>
-            <input v-model.trim="roomNameInput" placeholder="Enter room name">
+            <input id="room-name-input" v-model.trim="roomNameInput" placeholder="Enter room name">
             <b-alert show variant="danger" v-show="nameTaken" id="name-alert">Room name not available!</b-alert>
           </slot>
         </div>
@@ -37,15 +37,15 @@
 
         <div class="modal-body time-container">
           <slot name="body">
-            <div v-bind:class="{'box-active': timeInput === 10, 'box-inactive': timeInput !== 10}" @click="putTime(10)">10 min</div>
-            <div v-bind:class="{'box-active': timeInput === 5, 'box-inactive': timeInput !== 5}" @click="putTime(5)">5 min</div>
-            <div v-bind:class="{'box-active': timeInput === 3, 'box-inactive': timeInput !== 3}" @click="putTime(3)">3 min</div>
-            <div v-bind:class="{'box-active': timeInput === 1, 'box-inactive': timeInput !== 1}" @click="putTime(1)">1 min</div>
+            <div id="minutes-10" v-bind:class="{'box-active': timeInput === 10, 'box-inactive': timeInput !== 10}" @click="putTime(10)">10 min</div>
+            <div id="minutes-5" v-bind:class="{'box-active': timeInput === 5, 'box-inactive': timeInput !== 5}" @click="putTime(5)">5 min</div>
+            <div id="minutes-3" v-bind:class="{'box-active': timeInput === 3, 'box-inactive': timeInput !== 3}" @click="putTime(3)">3 min</div>
+            <div id="minutes-1" v-bind:class="{'box-active': timeInput === 1, 'box-inactive': timeInput !== 1}" @click="putTime(1)">1 min</div>
           </slot>
         </div>
 
         <div class="button-container">
-            <button :disabled="!valid" 
+            <button :disabled="!valid" id="create-button"
                     v-bind:class="{'submit-button': valid, 'submit-disabled': !valid}"
                     @click="createRoom">
               {{valid ? 'Create!' : 'Missing Fields'}}
@@ -61,7 +61,7 @@
 <script>
 import firebase from 'firebase'
 import { db } from '@/firebase'
-import { addGameDoc, checkNameUnique } from '@/resources/gameModel.js'
+import { addGameDoc, checkNameUnique, checkUserGame } from '@/resources/gameModel.js'
 import { addTimerDoc, addGameToTimer } from '@/resources/timerModel.js'
 
 export default {
@@ -82,23 +82,32 @@ export default {
   },
   methods: {
     async createRoom() {
-      if(this.valid)
-      {
-        let uniqueName = await checkNameUnique(this.roomNameInput);
-        //console.log("uniqueName: " + uniqueName)
+      let user_key = firebase.auth().currentUser.uid
+      let validUser = await checkUserGame(user_key)
+      validUser = validUser === false
+      if(validUser){
+        if(this.valid)
+        {
+          let uniqueName = await checkNameUnique(this.roomNameInput);
+          //console.log("uniqueName: " + uniqueName)
 
-        if(uniqueName) {
-          let timer = await addTimerDoc(this.timeInput*60)
-          let game = await addGameDoc(this.roomNameInput, this.typeInput, timer.id)
-          await addGameToTimer(game.id, timer.id)
+          if(uniqueName) {
+            let timer = await addTimerDoc(this.timeInput*60)
+            let game = await addGameDoc(this.roomNameInput, this.typeInput, timer.id)
+            await addGameToTimer(game.id, timer.id)
 
-          this.$router.push({ path: '/room/' + game.id })
+            this.$router.push({ path: '/room/' + game.id })
 
-          this.$emit('close')
-        } else {
-          this.nameTaken = true
-          //this.roomNameInput = ""
+            this.$emit('close')
+          } else {
+            this.nameTaken = true
+            //this.roomNameInput = ""
+          }
         }
+      } else{
+        this.$emit('badUser')
+        this.$emit('close')
+        
       }
     },
 
