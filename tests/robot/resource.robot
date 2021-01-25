@@ -13,7 +13,7 @@ ${VALID FIRSTNAME}    GG
 ${VALID LASTNAME}     WP
 ${INVALID FIRSTNAME}  GG12
 ${INVALID LASTNAME}   WP34
-${EXISTING EMAIL}     Chenerwin28@gmail.com
+${EXISTING EMAIL}     geosefuy@gmail.com
 ${VALID EMAIL}        GGWP123456@gmail.com
 ${INVALID EMAIL}      GGWP123456@gmail
 ${EXISTING USER}      GGWP1234
@@ -36,15 +36,17 @@ ${CHANGEPW2 URL}      http://${SERVER}/#/change-password/confirm
 *** keywords ***
 Open Browser to Login Page
     Open Browser  ${LOGIN URL}      Firefox
+    Set Selenium Timeout            20 seconds
     Maximize Browser Window
-    Set Selenium Speed              5
+    Set Selenium Speed              3
     Wait Until Page Contains Element    btnSubmit
     Login Button Should Be Disabled
 
 Open Browser to Register Page
     Open Browser  ${REGISTER URL}   Firefox
+    Set Selenium Timeout            20 seconds
     Maximize Browser Window
-    Set Selenium Speed              5
+    Set Selenium Speed              3
     Wait Until Page Contains Element    btnSubmit
     Login Button Should Be Disabled
 
@@ -105,196 +107,177 @@ Input Room Name
     Input Text    room-name-input   ${RoomName}
 
 Click Login Button
-    Set Selenium Speed              5
     Click Button                    btnSubmit
 
 Click Login here Text
-    Set Selenium Speed              5
     Click Element                   linkLogin
 
 Click Register Button
-    Set Selenium Speed              5
     Click Button                    btnSubmit
 
 Click Continue Button
-    Set Selenium Speed              5
     Click Button                    btnSubmit
 
 Click Register now Text
-    Set Selenium Speed              5
     Click Element                   linkRegister
 
 Click Sidenav
-    Set Selenium Speed              5
     Click Element                   menu
 
 Click Play
-    Set Selenium Speed              5
-    Click Element                   lobby
+    Click Element                   xpath=//button[@id='lobby']/h3
 
 Click Profile
-    Set Selenium Speed              5
-    Click Element                   profile
+    Click Element                   xpath=//a[@id='profile']/h3
 
 Click Leaderboard
-    Set Selenium Speed              5
-    Click Element                   leaderboard
+    Click Element                   xpath=//a[@id='leaderboard']/h3
 
 Click Triangle Right Icon
-    Set Selenium Speed              5
     Click Element                   class:triangle-right
 
 Click Triangle Left Icon
-    Set Selenium Speed              5
     Click Element                   class:triangle-left
 
 Click How to Play
-    Set Selenium Speed              5
-    Click Element                   help
+    Click Element                   xpath=//a[@id='help']/h3
 
 Click Same Field
-    Set Selenium Speed              5
     Click Element                   css=.router-link-exact-active > .cursor-pointer
 
 Click Logout
-    Set Selenium Speed              5
-    Click Element                   logout
+    Click Element                   xpath=//button[@id='logout']/h3
 
 Click Change Password
-    Set Selenium Speed              5
     Click Element                   change-pw
 
 Click Create Room
-    Set Selenium Speed              5
     Click Element                   headerButton
 
 Click Create
-    Set Selenium Speed              5
     Click Element                   create-button
 
 SELECT 10 MIN
-    Set Selenium Speed              5
     Click Element                   minutes-10
 
 SELECT 5 MIN
-    Set Selenium Speed              5
     Click Element                   minutes-5
 
 SELECT 3 MIN
-    Set Selenium Speed              5
     Click Element                   minutes-3
 
 SELECT 1 MIN
-    Set Selenium Speed              5
     Click Element                   minutes-1
     
 Game Lobby Page Should Be Open
+    Set Selenium Speed              3
     Location Should Be              ${GAME LOBBY URL}
-    Set Selenium Speed              5
     Element Should be Visible       GameLobbyTable
     Element Should be Visible       headerName
     Element Should be Visible       headerHost
     Element Should be Visible       headerButtonCont
+    Set Selenium Speed              3
 
 Waiting Room Page Should Be Open
+    Set Selenium Speed              3
     ### Temporary
-    Set Selenium Speed              5
     Element Should be Visible       GameLobbyTable
     Element Should be Visible       headerName
     Element Should be Visible       headerHost
     Element Should be Visible       headerButtonCont
+    Set Selenium Speed              3
 
 Register Page Should Be Open
+    Set Selenium Speed              3
     Location Should Be              ${REGISTER URL}
-    Set Selenium Speed              5
     Element Should be Visible       firstName
     Element Should be Visible       lastName
     Element Should be Visible       regUsername
     Element Should be Visible       email
     Element Should be Visible       password
     Element Should be Visible       confirmPassword
+    Set Selenium Speed              3
 
 Login Page Should Be Open
+    Set Selenium Speed              3
     Location Should Be              ${LOGIN URL}
-    Set Selenium Speed              5
     Element Should be Visible       pageLogin
     Element Should be Visible       loginUsername
     Element Should be Visible       loginPassword
+    Set Selenium Speed              3
 
 Profile Page Should Be Open
+    Set Selenium Speed              3
     Location Should Be              ${PROFILE URL}
-    Set Selenium Speed              5
     Element Should be Visible       user-details
     Element Should be Visible       hello
+    Set Selenium Speed              3
 
 Leaderboard Page Should Be Open
+    Set Selenium Speed              3
     Location Should Be              ${LEADERBOARD URL}
-    Set Selenium Speed              5
     Element Should be Visible       LeaderboardPage
     Element Should be Visible       LeaderboardTable
     Element Should be Visible       CriteriaSelect
+    Set Selenium Speed              3
 
 Rank Username And Score Should Be Visible
-    Set Selenium Speed              5
     Element Should be Visible       class:leaderRank
     Element Should be Visible       class:leaderName
     Element Should be Visible       class:leaderScore
+    Set Selenium Speed              3
 
 Instruction Page Should Be Open
+    Set Selenium Speed              3
     Location Should Be              ${INSTRUCTION URL}
-    Set Selenium Speed              5
     Element Should be Visible       instructions-box
+    Set Selenium Speed              3
 
 Change Password Page Should Be Open
+    Set Selenium Speed              3
     Location Should Be              ${CHANGEPW URL}
-    Set Selenium Speed              5
     Element Should be Visible       sectionLoginForm
     Element Should be Visible       email
     Element Should be Visible       password
     Element Should be Visible       go-back
+    Set Selenium Speed              3
 
 New Password Page Should Be Open
+    Set Selenium Speed              3
     Location Should Be              ${CHANGEPW2 URL}
-    Set Selenium Speed              5
     Element Should be Visible       sectionLoginForm
     Element Should be Visible       password
     Element Should be Visible       confirm-password
     Element Should be Visible       go-back
+    Set Selenium Speed              3
 
 Element Message Open Login
     [Arguments]   ${Error}
     Element Text Should Be          loginErrorMessages    ${Error}
-    Set Selenium Speed              5
 
 Element Message Open Register
     [Arguments]   ${Error}
     Element Text Should Be          registerError         ${Error}
-    Set Selenium Speed              5
 
 Table Header Leaderboard
     [Arguments]   ${Criteria}
     Element Text Should Be          headerScore           ${Criteria}
-    Set Selenium Speed              5
 
 Game Lobby Page Number
     [Arguments]   ${Criteria}
     Element Text Should Be          criteriaLabel           ${Criteria}
-    Set Selenium Speed              5
 
 Element Message Open ChangePW
     [Arguments]   ${Error}
     Element Text Should Be          loginErrorMessages    ${Error}
-    Set Selenium Speed              5
 
 Element Message Open NewPW
     [Arguments]   ${Error}
     Element Text Should Be          loginErrorMessages    ${Error}
-    Set Selenium Speed              5
 
 Element Message Open Create
     [Arguments]   ${Error}
     Element Text Should Be          name-alert    ${Error}
-    Set Selenium Speed              5
 
 Create Button Enabled
     Element Should Be Enabled       create-button
