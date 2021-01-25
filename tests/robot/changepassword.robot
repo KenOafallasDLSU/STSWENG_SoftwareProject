@@ -136,6 +136,6 @@ Redirecting URL to Login Page After Successful Change Password
     Input Email                   ${VALID EMAIL}
     Input Password                ${VALID PASSWORD}
     Click Continue button
-    Input New Password            ${NEW VALID PASSWORD}
-    Input Confirm New Password    ${NEW VALID PASSWORD}
+    Input New Password            ${NEWVALID PASSWORD}
+    Input Confirm New Password    ${NEWVALID PASSWORD}
     [Teardown]                    Close Browser
