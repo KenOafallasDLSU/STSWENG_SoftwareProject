@@ -1,0 +1,1949 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210127 21:42:23.063" rpa="false">
+<suite id="s1" name="Gamelobby" source="C:\Users\Erwin\Desktop\School files\STSWENG\STSWENG_SoftwareProject-Develop\tests\robot\gamelobby.robot">
+<test id="s1-t1" name="Staying on Game Lobby Page after Play text is clicked">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:42:23.283" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:42:23.283" endtime="20210127 21:42:28.152"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:42:28.152" endtime="20210127 21:42:28.156"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:42:28.156" endtime="20210127 21:42:30.291"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:42:30.291" endtime="20210127 21:42:30.291"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:42:30.292" endtime="20210127 21:42:33.304"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:42:33.305" endtime="20210127 21:42:39.326"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:42:33.304" endtime="20210127 21:42:39.326"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:42:23.283" endtime="20210127 21:42:39.326"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:42:39.327" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:42:39.327" endtime="20210127 21:42:48.470"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:42:39.327" endtime="20210127 21:42:48.470"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:42:48.472" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:42:48.472" endtime="20210127 21:42:57.687"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:42:48.471" endtime="20210127 21:42:57.687"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:42:57.688" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:42:57.688" endtime="20210127 21:43:09.780"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:42:57.688" endtime="20210127 21:43:09.780"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:43:09.811" endtime="20210127 21:43:09.811"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:43:12.870" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:43:09.812" endtime="20210127 21:43:12.870"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:43:18.903" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:43:12.870" endtime="20210127 21:43:18.903"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:43:24.931" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:43:18.903" endtime="20210127 21:43:24.931"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:43:30.954" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:43:24.931" endtime="20210127 21:43:30.954"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:43:36.980" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:43:30.954" endtime="20210127 21:43:36.980"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:43:09.810" endtime="20210127 21:43:36.980"></status>
+</kw>
+<kw name="Click Sidenav" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>menu</arg>
+</arguments>
+<msg timestamp="20210127 21:43:36.983" level="INFO">Clicking element 'menu'.</msg>
+<status status="PASS" starttime="20210127 21:43:36.982" endtime="20210127 21:43:43.041"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:43:36.982" endtime="20210127 21:43:43.041"></status>
+</kw>
+<kw name="Click Play" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@id='lobby']/h3</arg>
+</arguments>
+<msg timestamp="20210127 21:43:43.042" level="INFO">Clicking element 'xpath=//button[@id='lobby']/h3'.</msg>
+<status status="PASS" starttime="20210127 21:43:43.042" endtime="20210127 21:43:49.087"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:43:43.041" endtime="20210127 21:43:49.087"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:43:49.088" endtime="20210127 21:43:49.088"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:43:52.095" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:43:49.089" endtime="20210127 21:43:52.095"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:43:58.126" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:43:52.095" endtime="20210127 21:43:58.126"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:44:04.158" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:43:58.126" endtime="20210127 21:44:04.158"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:44:10.176" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:44:04.158" endtime="20210127 21:44:10.176"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:44:16.199" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:44:10.176" endtime="20210127 21:44:16.199"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:43:49.088" endtime="20210127 21:44:16.199"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 21:44:16.199" endtime="20210127 21:44:21.254"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:42:23.282" endtime="20210127 21:44:21.255" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Redirecting URL to Profile Page after Profile text is clicked">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:44:21.258" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:44:21.258" endtime="20210127 21:44:29.181"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:44:29.181" endtime="20210127 21:44:32.183"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:44:32.183" endtime="20210127 21:44:37.305"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:44:37.305" endtime="20210127 21:44:37.306"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:44:37.306" endtime="20210127 21:44:40.319"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:44:40.320" endtime="20210127 21:44:46.339"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:44:40.319" endtime="20210127 21:44:46.339"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:44:21.257" endtime="20210127 21:44:46.339"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:44:46.341" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:44:46.341" endtime="20210127 21:44:55.531"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:44:46.339" endtime="20210127 21:44:55.531"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:44:55.532" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:44:55.532" endtime="20210127 21:45:04.695"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:44:55.532" endtime="20210127 21:45:04.695"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:45:04.697" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:45:04.696" endtime="20210127 21:45:16.781"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:45:04.696" endtime="20210127 21:45:16.781"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:45:16.782" endtime="20210127 21:45:16.782"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:45:19.789" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:45:16.782" endtime="20210127 21:45:19.789"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:45:25.817" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:45:19.789" endtime="20210127 21:45:25.817"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:45:31.852" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:45:25.817" endtime="20210127 21:45:31.852"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:45:37.880" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:45:31.852" endtime="20210127 21:45:37.880"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:45:43.936" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:45:37.880" endtime="20210127 21:45:43.936"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:45:16.782" endtime="20210127 21:45:43.937"></status>
+</kw>
+<kw name="Click Sidenav" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>menu</arg>
+</arguments>
+<msg timestamp="20210127 21:45:43.942" level="INFO">Clicking element 'menu'.</msg>
+<status status="PASS" starttime="20210127 21:45:43.941" endtime="20210127 21:45:50.051"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:45:43.941" endtime="20210127 21:45:50.051"></status>
+</kw>
+<kw name="Click Profile" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@id='profile']/h3</arg>
+</arguments>
+<msg timestamp="20210127 21:45:50.052" level="INFO">Clicking element 'xpath=//a[@id='profile']/h3'.</msg>
+<status status="PASS" starttime="20210127 21:45:50.052" endtime="20210127 21:45:56.177"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:45:50.051" endtime="20210127 21:45:56.177"></status>
+</kw>
+<kw name="Profile Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:45:56.179" endtime="20210127 21:45:56.179"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${PROFILE URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:45:59.194" level="INFO">Current location is 'http://localhost:8080/#/profile'.</msg>
+<status status="PASS" starttime="20210127 21:45:56.179" endtime="20210127 21:45:59.194"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>user-details</arg>
+</arguments>
+<msg timestamp="20210127 21:46:05.270" level="INFO">Element 'user-details' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:45:59.194" endtime="20210127 21:46:05.270"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>hello</arg>
+</arguments>
+<msg timestamp="20210127 21:46:11.293" level="INFO">Element 'hello' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:46:05.270" endtime="20210127 21:46:11.293"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:45:56.178" endtime="20210127 21:46:11.293"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 21:46:11.293" endtime="20210127 21:46:16.346"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:44:21.257" endtime="20210127 21:46:16.347" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Redirecting URL to Leaderboard Page after Leaderboard text is clicked">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:46:16.351" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:46:16.350" endtime="20210127 21:46:24.727"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:46:24.727" endtime="20210127 21:46:27.728"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:46:27.728" endtime="20210127 21:46:32.862"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:46:32.862" endtime="20210127 21:46:32.862"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:46:32.863" endtime="20210127 21:46:35.876"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:46:35.876" endtime="20210127 21:46:41.895"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:46:35.876" endtime="20210127 21:46:41.895"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:46:16.349" endtime="20210127 21:46:41.895"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:46:41.897" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:46:41.897" endtime="20210127 21:46:51.078"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:46:41.896" endtime="20210127 21:46:51.078"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:46:51.079" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:46:51.079" endtime="20210127 21:47:00.235"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:46:51.079" endtime="20210127 21:47:00.235"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:47:00.236" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:47:00.235" endtime="20210127 21:47:12.306"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:47:00.235" endtime="20210127 21:47:12.306"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:47:12.307" endtime="20210127 21:47:12.308"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:47:15.314" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:47:12.308" endtime="20210127 21:47:15.314"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:47:21.346" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:47:15.314" endtime="20210127 21:47:21.347"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:47:27.375" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:47:21.347" endtime="20210127 21:47:27.375"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:47:33.402" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:47:27.375" endtime="20210127 21:47:33.402"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:47:39.426" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:47:33.402" endtime="20210127 21:47:39.426"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:47:12.307" endtime="20210127 21:47:39.426"></status>
+</kw>
+<kw name="Click Sidenav" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>menu</arg>
+</arguments>
+<msg timestamp="20210127 21:47:39.427" level="INFO">Clicking element 'menu'.</msg>
+<status status="PASS" starttime="20210127 21:47:39.427" endtime="20210127 21:47:45.528"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:47:39.427" endtime="20210127 21:47:45.528"></status>
+</kw>
+<kw name="Click Leaderboard" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@id='leaderboard']/h3</arg>
+</arguments>
+<msg timestamp="20210127 21:47:45.529" level="INFO">Clicking element 'xpath=//a[@id='leaderboard']/h3'.</msg>
+<status status="PASS" starttime="20210127 21:47:45.529" endtime="20210127 21:47:51.606"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:47:45.528" endtime="20210127 21:47:51.606"></status>
+</kw>
+<kw name="Leaderboard Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:47:51.606" endtime="20210127 21:47:51.607"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${LEADERBOARD URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:47:54.614" level="INFO">Current location is 'http://localhost:8080/#/leaderboard'.</msg>
+<status status="PASS" starttime="20210127 21:47:51.607" endtime="20210127 21:47:54.614"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>LeaderboardPage</arg>
+</arguments>
+<msg timestamp="20210127 21:48:00.637" level="INFO">Element 'LeaderboardPage' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:47:54.614" endtime="20210127 21:48:00.637"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>LeaderboardTable</arg>
+</arguments>
+<msg timestamp="20210127 21:48:06.661" level="INFO">Element 'LeaderboardTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:48:00.637" endtime="20210127 21:48:06.661"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>CriteriaSelect</arg>
+</arguments>
+<msg timestamp="20210127 21:48:12.688" level="INFO">Element 'CriteriaSelect' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:48:06.661" endtime="20210127 21:48:12.688"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:47:51.606" endtime="20210127 21:48:12.688"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 21:48:12.689" endtime="20210127 21:48:17.754"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:46:16.349" endtime="20210127 21:48:17.755" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Redirecting URL to Instruction Page after How to Play text is clicked">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:48:17.759" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:48:17.758" endtime="20210127 21:48:25.764"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:48:25.764" endtime="20210127 21:48:28.766"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:48:28.766" endtime="20210127 21:48:33.891"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:48:33.891" endtime="20210127 21:48:33.891"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:48:33.891" endtime="20210127 21:48:36.905"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:48:36.906" endtime="20210127 21:48:42.932"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:48:36.905" endtime="20210127 21:48:42.932"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:48:17.757" endtime="20210127 21:48:42.932"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:48:42.933" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:48:42.933" endtime="20210127 21:48:52.121"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:48:42.933" endtime="20210127 21:48:52.121"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:48:52.123" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:48:52.122" endtime="20210127 21:49:01.272"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:48:52.122" endtime="20210127 21:49:01.272"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:49:01.274" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:49:01.274" endtime="20210127 21:49:13.353"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:49:01.273" endtime="20210127 21:49:13.353"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:49:13.355" endtime="20210127 21:49:13.356"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:49:16.363" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:49:13.356" endtime="20210127 21:49:16.363"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:49:22.394" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:49:16.363" endtime="20210127 21:49:22.394"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:49:28.422" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:49:22.394" endtime="20210127 21:49:28.422"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:49:34.446" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:49:28.422" endtime="20210127 21:49:34.446"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:49:40.471" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:49:34.446" endtime="20210127 21:49:40.471"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:49:13.354" endtime="20210127 21:49:40.471"></status>
+</kw>
+<kw name="Click Sidenav" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>menu</arg>
+</arguments>
+<msg timestamp="20210127 21:49:40.472" level="INFO">Clicking element 'menu'.</msg>
+<status status="PASS" starttime="20210127 21:49:40.472" endtime="20210127 21:49:46.528"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:49:40.472" endtime="20210127 21:49:46.528"></status>
+</kw>
+<kw name="Click How to Play" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@id='help']/h3</arg>
+</arguments>
+<msg timestamp="20210127 21:49:46.529" level="INFO">Clicking element 'xpath=//a[@id='help']/h3'.</msg>
+<status status="PASS" starttime="20210127 21:49:46.529" endtime="20210127 21:49:52.673"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:49:46.529" endtime="20210127 21:49:52.673"></status>
+</kw>
+<kw name="Instruction Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:49:52.674" endtime="20210127 21:49:52.674"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${INSTRUCTION URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:49:55.681" level="INFO">Current location is 'http://localhost:8080/#/help'.</msg>
+<status status="PASS" starttime="20210127 21:49:52.674" endtime="20210127 21:49:55.681"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>instructions-box</arg>
+</arguments>
+<msg timestamp="20210127 21:50:01.705" level="INFO">Element 'instructions-box' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:49:55.681" endtime="20210127 21:50:01.705"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:49:52.674" endtime="20210127 21:50:01.705"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 21:50:01.705" endtime="20210127 21:50:06.748"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:48:17.756" endtime="20210127 21:50:06.749" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Redirecting URL to Login Page after Logout text is clicked">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:50:06.752" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:50:06.752" endtime="20210127 21:50:14.632"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:50:14.632" endtime="20210127 21:50:17.635"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:50:17.635" endtime="20210127 21:50:22.799"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:50:22.799" endtime="20210127 21:50:22.799"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:50:22.799" endtime="20210127 21:50:25.813"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:50:25.813" endtime="20210127 21:50:31.829"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:50:25.813" endtime="20210127 21:50:31.829"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:50:06.752" endtime="20210127 21:50:31.829"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:50:31.831" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:50:31.831" endtime="20210127 21:50:40.989"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:50:31.830" endtime="20210127 21:50:40.989"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:50:40.991" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:50:40.991" endtime="20210127 21:50:50.182"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:50:40.990" endtime="20210127 21:50:50.182"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:50:50.183" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:50:50.183" endtime="20210127 21:51:02.258"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:50:50.183" endtime="20210127 21:51:02.258"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:51:02.259" endtime="20210127 21:51:02.259"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:51:05.265" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:51:02.259" endtime="20210127 21:51:05.265"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:51:11.295" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:51:05.265" endtime="20210127 21:51:11.295"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:51:17.326" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:51:11.295" endtime="20210127 21:51:17.326"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:51:23.348" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:51:17.326" endtime="20210127 21:51:23.348"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:51:29.379" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:51:23.348" endtime="20210127 21:51:29.379"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:51:02.259" endtime="20210127 21:51:29.379"></status>
+</kw>
+<kw name="Click Sidenav" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>menu</arg>
+</arguments>
+<msg timestamp="20210127 21:51:29.381" level="INFO">Clicking element 'menu'.</msg>
+<status status="PASS" starttime="20210127 21:51:29.381" endtime="20210127 21:51:35.432"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:51:29.380" endtime="20210127 21:51:35.432"></status>
+</kw>
+<kw name="Click Logout" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@id='logout']/h3</arg>
+</arguments>
+<msg timestamp="20210127 21:51:35.433" level="INFO">Clicking element 'xpath=//button[@id='logout']/h3'.</msg>
+<status status="PASS" starttime="20210127 21:51:35.433" endtime="20210127 21:51:41.488"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:51:35.433" endtime="20210127 21:51:41.488"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:51:41.489" endtime="20210127 21:51:41.489"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:51:44.495" level="INFO">Current location is 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:51:41.489" endtime="20210127 21:51:44.495"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>pageLogin</arg>
+</arguments>
+<msg timestamp="20210127 21:51:50.516" level="INFO">Element 'pageLogin' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:51:44.495" endtime="20210127 21:51:50.516"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>loginUsername</arg>
+</arguments>
+<msg timestamp="20210127 21:51:56.535" level="INFO">Element 'loginUsername' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:51:50.516" endtime="20210127 21:51:56.535"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>loginPassword</arg>
+</arguments>
+<msg timestamp="20210127 21:52:02.563" level="INFO">Element 'loginPassword' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:51:56.535" endtime="20210127 21:52:02.563"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:51:41.489" endtime="20210127 21:52:02.563"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 21:52:02.564" endtime="20210127 21:52:07.623"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:50:06.751" endtime="20210127 21:52:07.624" critical="yes"></status>
+</test>
+<test id="s1-t6" name="Displaying of Different Pages of Game Lobbies">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:52:07.627" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:52:07.627" endtime="20210127 21:52:15.644"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:52:15.644" endtime="20210127 21:52:18.647"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:52:18.647" endtime="20210127 21:52:23.780"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:52:23.780" endtime="20210127 21:52:23.780"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:52:23.780" endtime="20210127 21:52:26.793"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:52:26.793" endtime="20210127 21:52:32.811"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:52:26.793" endtime="20210127 21:52:32.811"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:52:07.626" endtime="20210127 21:52:32.811"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:52:32.813" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:52:32.812" endtime="20210127 21:52:41.960"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:52:32.812" endtime="20210127 21:52:41.960"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:52:41.961" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:52:41.961" endtime="20210127 21:52:51.100"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:52:41.961" endtime="20210127 21:52:51.100"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:52:51.101" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:52:51.101" endtime="20210127 21:53:03.200"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:52:51.101" endtime="20210127 21:53:03.200"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:53:03.201" endtime="20210127 21:53:03.201"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:53:06.208" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:53:03.201" endtime="20210127 21:53:06.208"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:53:12.236" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:53:06.208" endtime="20210127 21:53:12.236"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:53:18.264" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:53:12.236" endtime="20210127 21:53:18.264"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:53:24.288" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:53:18.264" endtime="20210127 21:53:24.288"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:53:30.311" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:53:24.288" endtime="20210127 21:53:30.311"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:53:03.201" endtime="20210127 21:53:30.311"></status>
+</kw>
+<kw name="Game Lobby Page Number" library="resource">
+<arguments>
+<arg>1</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>criteriaLabel</arg>
+<arg>${Criteria}</arg>
+</arguments>
+<msg timestamp="20210127 21:53:30.314" level="INFO">Verifying element 'criteriaLabel' contains exact text '1'.</msg>
+<status status="PASS" starttime="20210127 21:53:30.313" endtime="20210127 21:53:36.342"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:53:30.313" endtime="20210127 21:53:36.342"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 21:53:36.343" endtime="20210127 21:53:41.396"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:52:07.625" endtime="20210127 21:53:41.396" critical="yes"></status>
+</test>
+<test id="s1-t7" name="Functionality Checking for Create Room">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:53:41.400" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:53:41.400" endtime="20210127 21:53:49.399"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:53:49.399" endtime="20210127 21:53:52.400"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:53:52.400" endtime="20210127 21:53:57.533"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:53:57.533" endtime="20210127 21:53:57.533"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:53:57.533" endtime="20210127 21:54:00.546"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:54:00.547" endtime="20210127 21:54:06.576"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:54:00.546" endtime="20210127 21:54:06.576"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:53:41.399" endtime="20210127 21:54:06.576"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:54:06.577" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:54:06.577" endtime="20210127 21:54:15.722"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:54:06.577" endtime="20210127 21:54:15.722"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:54:15.723" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:54:15.723" endtime="20210127 21:54:24.866"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:54:15.723" endtime="20210127 21:54:24.866"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:54:24.868" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:54:24.867" endtime="20210127 21:54:36.939"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:54:24.867" endtime="20210127 21:54:36.940"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:54:36.941" endtime="20210127 21:54:36.941"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:54:39.948" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:54:36.941" endtime="20210127 21:54:39.948"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:54:45.976" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:54:39.948" endtime="20210127 21:54:45.976"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:54:52.005" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:54:45.976" endtime="20210127 21:54:52.005"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:54:58.028" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:54:52.005" endtime="20210127 21:54:58.028"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:55:04.052" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:54:58.028" endtime="20210127 21:55:04.052"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:54:36.940" endtime="20210127 21:55:04.052"></status>
+</kw>
+<kw name="Click Create Room" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>headerButton</arg>
+</arguments>
+<msg timestamp="20210127 21:55:04.053" level="INFO">Clicking element 'headerButton'.</msg>
+<status status="PASS" starttime="20210127 21:55:04.053" endtime="20210127 21:55:10.105"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:55:04.053" endtime="20210127 21:55:10.105"></status>
+</kw>
+<kw name="Create Button Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>create-button</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:55:10.107" endtime="20210127 21:55:16.139"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:55:10.106" endtime="20210127 21:55:16.139"></status>
+</kw>
+<kw name="Input Room Name" library="resource">
+<arguments>
+<arg>${INVALID ROOM}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>room-name-input</arg>
+<arg>${RoomName}</arg>
+</arguments>
+<msg timestamp="20210127 21:55:16.140" level="INFO">Typing text 'AAAA' into text field 'room-name-input'.</msg>
+<status status="PASS" starttime="20210127 21:55:16.139" endtime="20210127 21:55:25.248"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:55:16.139" endtime="20210127 21:55:25.248"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>type-select</arg>
+<arg>true</arg>
+</arguments>
+<msg timestamp="20210127 21:55:25.249" level="INFO">Selecting options from selection list 'type-select' by value true.</msg>
+<status status="PASS" starttime="20210127 21:55:25.249" endtime="20210127 21:55:43.322"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>type-select</arg>
+<arg>false</arg>
+</arguments>
+<msg timestamp="20210127 21:55:43.323" level="INFO">Selecting options from selection list 'type-select' by value false.</msg>
+<status status="PASS" starttime="20210127 21:55:43.323" endtime="20210127 21:56:01.388"></status>
+</kw>
+<kw name="Create Button Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>create-button</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:56:01.389" endtime="20210127 21:56:07.405"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:56:01.388" endtime="20210127 21:56:07.405"></status>
+</kw>
+<kw name="SELECT 10 MIN" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>minutes-10</arg>
+</arguments>
+<msg timestamp="20210127 21:56:07.406" level="INFO">Clicking element 'minutes-10'.</msg>
+<status status="PASS" starttime="20210127 21:56:07.406" endtime="20210127 21:56:13.474"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:56:07.405" endtime="20210127 21:56:13.474"></status>
+</kw>
+<kw name="SELECT 5 MIN" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>minutes-5</arg>
+</arguments>
+<msg timestamp="20210127 21:56:13.476" level="INFO">Clicking element 'minutes-5'.</msg>
+<status status="PASS" starttime="20210127 21:56:13.475" endtime="20210127 21:56:19.525"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:56:13.475" endtime="20210127 21:56:19.525"></status>
+</kw>
+<kw name="SELECT 3 MIN" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>minutes-3</arg>
+</arguments>
+<msg timestamp="20210127 21:56:19.526" level="INFO">Clicking element 'minutes-3'.</msg>
+<status status="PASS" starttime="20210127 21:56:19.525" endtime="20210127 21:56:25.578"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:56:19.525" endtime="20210127 21:56:25.578"></status>
+</kw>
+<kw name="SELECT 1 MIN" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>minutes-1</arg>
+</arguments>
+<msg timestamp="20210127 21:56:25.580" level="INFO">Clicking element 'minutes-1'.</msg>
+<status status="PASS" starttime="20210127 21:56:25.579" endtime="20210127 21:56:31.625"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:56:25.579" endtime="20210127 21:56:31.625"></status>
+</kw>
+<kw name="Create Button Enabled" library="resource">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<arguments>
+<arg>create-button</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:56:31.626" endtime="20210127 21:56:40.653"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:56:31.625" endtime="20210127 21:56:40.653"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 21:56:40.653" endtime="20210127 21:56:45.701"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:53:41.398" endtime="20210127 21:56:45.702" critical="yes"></status>
+</test>
+<test id="s1-t8" name="Displaying of Error Message for Create Room">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:56:45.707" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:56:45.707" endtime="20210127 21:56:53.765"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:56:53.765" endtime="20210127 21:56:56.767"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:56:56.767" endtime="20210127 21:57:01.897"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:57:01.897" endtime="20210127 21:57:01.897"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:57:01.897" endtime="20210127 21:57:04.909"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:57:04.910" endtime="20210127 21:57:10.931"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:57:04.909" endtime="20210127 21:57:10.931"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:56:45.706" endtime="20210127 21:57:10.931"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:57:10.932" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:57:10.932" endtime="20210127 21:57:20.078"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:57:10.932" endtime="20210127 21:57:20.078"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:57:20.079" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:57:20.079" endtime="20210127 21:57:29.236"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:57:20.079" endtime="20210127 21:57:29.236"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:57:29.240" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:57:29.240" endtime="20210127 21:57:41.322"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:57:29.240" endtime="20210127 21:57:41.322"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:57:41.326" endtime="20210127 21:57:41.326"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 21:57:44.332" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 21:57:41.326" endtime="20210127 21:57:44.332"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 21:57:50.361" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:57:44.332" endtime="20210127 21:57:50.361"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 21:57:56.395" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:57:50.361" endtime="20210127 21:57:56.395"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 21:58:02.418" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:57:56.395" endtime="20210127 21:58:02.418"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 21:58:08.445" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:58:02.418" endtime="20210127 21:58:08.445"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:57:41.325" endtime="20210127 21:58:08.445"></status>
+</kw>
+<kw name="Click Create Room" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>headerButton</arg>
+</arguments>
+<msg timestamp="20210127 21:58:08.446" level="INFO">Clicking element 'headerButton'.</msg>
+<status status="PASS" starttime="20210127 21:58:08.445" endtime="20210127 21:58:14.501"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:58:08.445" endtime="20210127 21:58:14.501"></status>
+</kw>
+<kw name="Input Room Name" library="resource">
+<arguments>
+<arg>${INVALID ROOM}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>room-name-input</arg>
+<arg>${RoomName}</arg>
+</arguments>
+<msg timestamp="20210127 21:58:14.502" level="INFO">Typing text 'AAAA' into text field 'room-name-input'.</msg>
+<status status="PASS" starttime="20210127 21:58:14.502" endtime="20210127 21:58:23.619"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:58:14.502" endtime="20210127 21:58:23.619"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>type-select</arg>
+<arg>true</arg>
+</arguments>
+<msg timestamp="20210127 21:58:23.619" level="INFO">Selecting options from selection list 'type-select' by value true.</msg>
+<status status="PASS" starttime="20210127 21:58:23.619" endtime="20210127 21:58:41.695"></status>
+</kw>
+<kw name="SELECT 10 MIN" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>minutes-10</arg>
+</arguments>
+<msg timestamp="20210127 21:58:41.696" level="INFO">Clicking element 'minutes-10'.</msg>
+<status status="PASS" starttime="20210127 21:58:41.696" endtime="20210127 21:58:47.746"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:58:41.696" endtime="20210127 21:58:47.746"></status>
+</kw>
+<kw name="Click Create" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>create-button</arg>
+</arguments>
+<msg timestamp="20210127 21:58:47.747" level="INFO">Clicking element 'create-button'.</msg>
+<status status="PASS" starttime="20210127 21:58:47.747" endtime="20210127 21:58:53.794"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:58:47.747" endtime="20210127 21:58:53.795"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>name-alert</arg>
+</arguments>
+<msg timestamp="20210127 21:58:59.833" level="INFO">Element 'name-alert' is displayed.</msg>
+<status status="PASS" starttime="20210127 21:58:53.796" endtime="20210127 21:58:59.833"></status>
+</kw>
+<kw name="Element Message Open Create" library="resource">
+<arguments>
+<arg>Room name not available!</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>name-alert</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 21:58:59.835" level="INFO">Verifying element 'name-alert' contains exact text 'Room name not available!'.</msg>
+<status status="PASS" starttime="20210127 21:58:59.834" endtime="20210127 21:59:05.859"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:58:59.834" endtime="20210127 21:59:05.859"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 21:59:05.861" endtime="20210127 21:59:10.911"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:56:45.703" endtime="20210127 21:59:10.912" critical="yes"></status>
+</test>
+<test id="s1-t9" name="Redirecting to Waiting Room after Create Room">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 21:59:10.915" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 21:59:10.914" endtime="20210127 21:59:18.782"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:59:18.782" endtime="20210127 21:59:21.784"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 21:59:21.784" endtime="20210127 21:59:26.909"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:59:26.909" endtime="20210127 21:59:26.910"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:59:26.910" endtime="20210127 21:59:29.935"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 21:59:29.935" endtime="20210127 21:59:35.953"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:59:29.935" endtime="20210127 21:59:35.953"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:59:10.914" endtime="20210127 21:59:35.953"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 21:59:35.955" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 21:59:35.954" endtime="20210127 21:59:45.098"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:59:35.954" endtime="20210127 21:59:45.098"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 21:59:45.099" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 21:59:45.099" endtime="20210127 21:59:54.261"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:59:45.099" endtime="20210127 21:59:54.261"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 21:59:54.262" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 21:59:54.262" endtime="20210127 22:00:06.348"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:59:54.262" endtime="20210127 22:00:06.348"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 22:00:06.349" endtime="20210127 22:00:06.350"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 22:00:09.365" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 22:00:06.350" endtime="20210127 22:00:09.365"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 22:00:15.391" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:00:09.365" endtime="20210127 22:00:15.391"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 22:00:21.417" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:00:15.391" endtime="20210127 22:00:21.417"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 22:00:27.441" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:00:21.417" endtime="20210127 22:00:27.441"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 22:00:33.467" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:00:27.441" endtime="20210127 22:00:33.467"></status>
+</kw>
+<status status="PASS" starttime="20210127 22:00:06.349" endtime="20210127 22:00:33.467"></status>
+</kw>
+<kw name="Click Create Room" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>headerButton</arg>
+</arguments>
+<msg timestamp="20210127 22:00:33.468" level="INFO">Clicking element 'headerButton'.</msg>
+<status status="PASS" starttime="20210127 22:00:33.468" endtime="20210127 22:00:39.521"></status>
+</kw>
+<status status="PASS" starttime="20210127 22:00:33.468" endtime="20210127 22:00:39.521"></status>
+</kw>
+<kw name="Input Room Name" library="resource">
+<arguments>
+<arg>${VALID ROOM}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>room-name-input</arg>
+<arg>${RoomName}</arg>
+</arguments>
+<msg timestamp="20210127 22:00:39.522" level="INFO">Typing text 't3st room' into text field 'room-name-input'.</msg>
+<status status="PASS" starttime="20210127 22:00:39.522" endtime="20210127 22:00:48.666"></status>
+</kw>
+<status status="PASS" starttime="20210127 22:00:39.522" endtime="20210127 22:00:48.666"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>type-select</arg>
+<arg>true</arg>
+</arguments>
+<msg timestamp="20210127 22:00:48.667" level="INFO">Selecting options from selection list 'type-select' by value true.</msg>
+<status status="PASS" starttime="20210127 22:00:48.667" endtime="20210127 22:01:06.750"></status>
+</kw>
+<kw name="SELECT 10 MIN" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>minutes-10</arg>
+</arguments>
+<msg timestamp="20210127 22:01:06.751" level="INFO">Clicking element 'minutes-10'.</msg>
+<status status="PASS" starttime="20210127 22:01:06.751" endtime="20210127 22:01:12.801"></status>
+</kw>
+<status status="PASS" starttime="20210127 22:01:06.750" endtime="20210127 22:01:12.801"></status>
+</kw>
+<kw name="Click Create" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>create-button</arg>
+</arguments>
+<msg timestamp="20210127 22:01:12.802" level="INFO">Clicking element 'create-button'.</msg>
+<status status="PASS" starttime="20210127 22:01:12.802" endtime="20210127 22:01:18.849"></status>
+</kw>
+<status status="PASS" starttime="20210127 22:01:12.802" endtime="20210127 22:01:18.849"></status>
+</kw>
+<kw name="Waiting Room Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 22:01:18.850" endtime="20210127 22:01:18.850"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>waiting-room-label</arg>
+</arguments>
+<msg timestamp="20210127 22:01:24.877" level="INFO">Element 'waiting-room-label' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:01:18.850" endtime="20210127 22:01:24.877"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>room-type</arg>
+</arguments>
+<msg timestamp="20210127 22:01:30.923" level="INFO">Element 'room-type' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:01:24.877" endtime="20210127 22:01:30.923"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>room-info</arg>
+</arguments>
+<msg timestamp="20210127 22:01:36.947" level="INFO">Element 'room-info' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:01:30.923" endtime="20210127 22:01:36.947"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>owner-data</arg>
+</arguments>
+<msg timestamp="20210127 22:01:42.969" level="INFO">Element 'owner-data' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:01:36.947" endtime="20210127 22:01:42.969"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>util-buttons</arg>
+</arguments>
+<msg timestamp="20210127 22:01:49.002" level="INFO">Element 'util-buttons' is displayed.</msg>
+<status status="PASS" starttime="20210127 22:01:42.969" endtime="20210127 22:01:49.002"></status>
+</kw>
+<status status="PASS" starttime="20210127 22:01:18.850" endtime="20210127 22:01:49.002"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 22:01:49.003" endtime="20210127 22:01:54.053"></status>
+</kw>
+<status status="PASS" starttime="20210127 21:59:10.913" endtime="20210127 22:01:54.054" critical="yes"></status>
+</test>
+<doc>A test suite with tests for game lobby.</doc>
+<status status="PASS" starttime="20210127 21:42:23.067" endtime="20210127 22:01:54.056"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0">Critical Tests</stat>
+<stat pass="9" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="9" fail="0" id="s1" name="Gamelobby">Gamelobby</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

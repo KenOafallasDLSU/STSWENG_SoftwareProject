@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210127 18:26:16.888" rpa="false">
+<suite id="s1" name="Login" source="C:\Users\Erwin\Desktop\School files\STSWENG\STSWENG_SoftwareProject-Develop\tests\robot\login.robot">
+<test id="s1-t1" name="Displaying of different types of error messages during login if invalid input(s) is(are) spotted">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:26:17.172" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 18:26:17.171" endtime="20210127 18:26:21.985"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:26:21.985" endtime="20210127 18:26:21.987"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:26:21.987" endtime="20210127 18:26:24.121"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:26:24.122" endtime="20210127 18:26:24.122"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:26:24.122" endtime="20210127 18:26:27.137"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:26:27.137" endtime="20210127 18:26:33.155"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:26:27.137" endtime="20210127 18:26:33.155"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:26:17.171" endtime="20210127 18:26:33.155"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${INVALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 18:26:33.157" level="INFO">Typing text 'GGWP1234!' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 18:26:33.156" endtime="20210127 18:26:42.393"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:26:33.156" endtime="20210127 18:26:42.394"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${INVALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 18:26:42.397" level="INFO">Typing text '1234' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 18:26:42.397" endtime="20210127 18:26:51.572"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:26:42.395" endtime="20210127 18:26:51.572"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:26:51.573" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:26:51.573" endtime="20210127 18:27:03.666"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:26:51.573" endtime="20210127 18:27:03.666"></status>
+</kw>
+<kw name="Element Message Open Login" library="resource">
+<arguments>
+<arg>This username does not exist.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>loginErrorMessages</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:27:03.667" level="INFO">Verifying element 'loginErrorMessages' contains exact text 'This username does not exist.'.</msg>
+<status status="PASS" starttime="20210127 18:27:03.667" endtime="20210127 18:27:09.718"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:27:03.667" endtime="20210127 18:27:09.718"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:27:09.719" endtime="20210127 18:27:15.768"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 18:27:15.768" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 18:27:15.768" endtime="20210127 18:27:24.973"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:27:15.768" endtime="20210127 18:27:24.973"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:27:24.974" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:27:24.974" endtime="20210127 18:27:37.058"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:27:24.974" endtime="20210127 18:27:37.058"></status>
+</kw>
+<kw name="Element Message Open Login" library="resource">
+<arguments>
+<arg>Invalid password.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>loginErrorMessages</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:27:37.063" level="INFO">Verifying element 'loginErrorMessages' contains exact text 'Invalid password.'.</msg>
+<status status="PASS" starttime="20210127 18:27:37.062" endtime="20210127 18:27:43.092"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:27:37.061" endtime="20210127 18:27:43.092"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:27:43.094" endtime="20210127 18:27:48.182"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:26:17.169" endtime="20210127 18:27:48.184" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Disabling of button during login when information given is incomplete">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:27:48.195" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 18:27:48.194" endtime="20210127 18:27:55.959"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:27:55.959" endtime="20210127 18:27:58.961"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:27:58.961" endtime="20210127 18:28:04.085"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:28:04.085" endtime="20210127 18:28:04.085"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:28:04.085" endtime="20210127 18:28:07.098"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:28:07.099" endtime="20210127 18:28:13.164"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:28:07.098" endtime="20210127 18:28:13.165"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:27:48.193" endtime="20210127 18:28:13.165"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 18:28:13.169" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 18:28:13.168" endtime="20210127 18:28:22.403"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:28:13.167" endtime="20210127 18:28:22.404"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:28:22.407" endtime="20210127 18:28:28.452"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:28:22.406" endtime="20210127 18:28:28.452"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:28:28.453" endtime="20210127 18:28:34.504"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 18:28:34.506" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 18:28:34.505" endtime="20210127 18:28:43.691"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:28:34.504" endtime="20210127 18:28:43.691"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:28:43.692" endtime="20210127 18:28:49.708"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:28:43.692" endtime="20210127 18:28:49.708"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 18:28:49.708" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 18:28:49.708" endtime="20210127 18:28:58.893"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:28:49.708" endtime="20210127 18:28:58.893"></status>
+</kw>
+<kw name="Login Button Should Be Enabled" library="resource">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:28:58.895" endtime="20210127 18:29:07.934"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:28:58.895" endtime="20210127 18:29:07.937"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:29:07.941" endtime="20210127 18:29:13.019"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:27:48.189" endtime="20210127 18:29:13.020" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Redirecting URL to Register Page after Register now text is clicked">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:29:13.025" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 18:29:13.024" endtime="20210127 18:29:21.065"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:29:21.065" endtime="20210127 18:29:24.070"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:29:24.070" endtime="20210127 18:29:29.190"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:29:29.190" endtime="20210127 18:29:29.191"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:29:29.192" endtime="20210127 18:29:32.229"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:29:32.229" endtime="20210127 18:29:38.246"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:29:32.229" endtime="20210127 18:29:38.246"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:29:13.023" endtime="20210127 18:29:38.246"></status>
+</kw>
+<kw name="Click Register now Text" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>linkRegister</arg>
+</arguments>
+<msg timestamp="20210127 18:29:38.247" level="INFO">Clicking element 'linkRegister'.</msg>
+<status status="PASS" starttime="20210127 18:29:38.247" endtime="20210127 18:29:44.339"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:29:38.247" endtime="20210127 18:29:44.341"></status>
+</kw>
+<kw name="Register Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:29:44.347" endtime="20210127 18:29:44.348"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${REGISTER URL}</arg>
+</arguments>
+<msg timestamp="20210127 18:29:47.363" level="INFO">Current location is 'http://localhost:8080/#/register'.</msg>
+<status status="PASS" starttime="20210127 18:29:44.348" endtime="20210127 18:29:47.363"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>firstName</arg>
+</arguments>
+<msg timestamp="20210127 18:29:53.403" level="INFO">Element 'firstName' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:29:47.363" endtime="20210127 18:29:53.403"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>lastName</arg>
+</arguments>
+<msg timestamp="20210127 18:29:59.431" level="INFO">Element 'lastName' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:29:53.403" endtime="20210127 18:29:59.431"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>regUsername</arg>
+</arguments>
+<msg timestamp="20210127 18:30:05.460" level="INFO">Element 'regUsername' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:29:59.431" endtime="20210127 18:30:05.460"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<msg timestamp="20210127 18:30:11.506" level="INFO">Element 'email' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:30:05.461" endtime="20210127 18:30:11.506"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>password</arg>
+</arguments>
+<msg timestamp="20210127 18:30:17.583" level="INFO">Element 'password' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:30:11.506" endtime="20210127 18:30:17.583"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>confirmPassword</arg>
+</arguments>
+<msg timestamp="20210127 18:30:23.612" level="INFO">Element 'confirmPassword' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:30:17.583" endtime="20210127 18:30:23.612"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:30:23.612" endtime="20210127 18:30:23.612"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:29:44.344" endtime="20210127 18:30:23.613"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:30:23.613" endtime="20210127 18:30:25.798"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:29:13.023" endtime="20210127 18:30:25.799" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Redirecting URL to Game Lobby Page after successful login">
+<kw name="Open Browser to Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:30:25.806" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 18:30:25.805" endtime="20210127 18:30:31.242"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:30:31.242" endtime="20210127 18:30:31.247"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:30:31.247" endtime="20210127 18:30:33.391"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:30:33.391" endtime="20210127 18:30:33.392"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:30:33.392" endtime="20210127 18:30:36.416"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:30:36.417" endtime="20210127 18:30:42.445"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:30:36.416" endtime="20210127 18:30:42.445"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:30:25.803" endtime="20210127 18:30:42.445"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginUsername</arg>
+<arg>${Username}</arg>
+</arguments>
+<msg timestamp="20210127 18:30:42.447" level="INFO">Typing text 'GGWP123456' into text field 'loginUsername'.</msg>
+<status status="PASS" starttime="20210127 18:30:42.447" endtime="20210127 18:30:51.628"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:30:42.446" endtime="20210127 18:30:51.628"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>loginPassword</arg>
+<arg>${Password}</arg>
+</arguments>
+<msg timestamp="20210127 18:30:51.630" level="INFO">Typing text 'GgWp123456!' into text field 'loginPassword'.</msg>
+<status status="PASS" starttime="20210127 18:30:51.629" endtime="20210127 18:31:00.824"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:30:51.629" endtime="20210127 18:31:00.824"></status>
+</kw>
+<kw name="Click Login Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:31:00.836" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:31:00.835" endtime="20210127 18:31:13.020"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:31:00.834" endtime="20210127 18:31:13.021"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:31:13.024" endtime="20210127 18:31:13.025"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 18:31:16.040" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 18:31:13.025" endtime="20210127 18:31:16.040"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 18:31:22.081" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:31:16.040" endtime="20210127 18:31:22.081"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 18:31:28.136" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:31:22.081" endtime="20210127 18:31:28.136"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 18:31:34.168" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:31:28.136" endtime="20210127 18:31:34.168"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 18:31:40.210" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:31:34.169" endtime="20210127 18:31:40.210"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:31:40.210" endtime="20210127 18:31:40.210"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:31:13.023" endtime="20210127 18:31:40.210"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:31:40.211" endtime="20210127 18:31:42.422"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:30:25.802" endtime="20210127 18:31:42.422" critical="yes"></status>
+</test>
+<doc>A test suite with tests for login.</doc>
+<status status="PASS" starttime="20210127 18:26:16.890" endtime="20210127 18:31:42.425"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

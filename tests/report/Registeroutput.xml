@@ -1,0 +1,1272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210127 18:12:15.458" rpa="false">
+<suite id="s1" name="Register" source="C:\Users\Erwin\Desktop\School files\STSWENG\STSWENG_SoftwareProject-Develop\tests\robot\register.robot">
+<test id="s1-t1" name="Preprocessing of account during registration">
+<kw name="Open Browser to Register Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:12:15.649" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/register'.</msg>
+<status status="PASS" starttime="20210127 18:12:15.648" endtime="20210127 18:12:20.479"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:12:20.480" endtime="20210127 18:12:20.481"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:12:20.482" endtime="20210127 18:12:22.600"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:12:22.600" endtime="20210127 18:12:22.600"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:12:22.600" endtime="20210127 18:12:25.615"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:12:25.616" endtime="20210127 18:12:31.647"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:12:25.616" endtime="20210127 18:12:31.648"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:12:15.648" endtime="20210127 18:12:31.648"></status>
+</kw>
+<kw name="Input First Name" library="resource">
+<arguments>
+<arg>${VALID FIRSTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>firstName</arg>
+<arg>${FirstName}</arg>
+</arguments>
+<msg timestamp="20210127 18:12:31.652" level="INFO">Typing text 'GG' into text field 'firstName'.</msg>
+<status status="PASS" starttime="20210127 18:12:31.651" endtime="20210127 18:12:40.912"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:12:31.650" endtime="20210127 18:12:40.913"></status>
+</kw>
+<kw name="Input Last Name" library="resource">
+<arguments>
+<arg>${VALID LASTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>lastName</arg>
+<arg>${LastName}</arg>
+</arguments>
+<msg timestamp="20210127 18:12:40.917" level="INFO">Typing text 'WP' into text field 'lastName'.</msg>
+<status status="PASS" starttime="20210127 18:12:40.916" endtime="20210127 18:12:50.112"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:12:40.914" endtime="20210127 18:12:50.112"></status>
+</kw>
+<kw name="Input Register Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+<arg>${RegUsername}</arg>
+</arguments>
+<msg timestamp="20210127 18:12:50.115" level="INFO">Typing text 'GGWP123456' into text field 'regUsername'.</msg>
+<status status="PASS" starttime="20210127 18:12:50.114" endtime="20210127 18:12:59.431"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:12:50.113" endtime="20210127 18:12:59.432"></status>
+</kw>
+<kw name="Input Email" library="resource">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20210127 18:12:59.436" level="INFO">Typing text 'GGWP123456@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20210127 18:12:59.435" endtime="20210127 18:13:08.689"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:12:59.434" endtime="20210127 18:13:08.689"></status>
+</kw>
+<kw name="Input Register Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${RegPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:13:08.690" level="INFO">Typing text 'GgWp123456!' into text field 'password'.</msg>
+<status status="PASS" starttime="20210127 18:13:08.690" endtime="20210127 18:13:17.822"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:13:08.690" endtime="20210127 18:13:17.822"></status>
+</kw>
+<kw name="Input Confirm Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>confirmPassword</arg>
+<arg>${ConfirmPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:13:17.824" level="INFO">Typing text 'GgWp123456!' into text field 'confirmPassword'.</msg>
+<status status="PASS" starttime="20210127 18:13:17.823" endtime="20210127 18:13:27.051"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:13:17.823" endtime="20210127 18:13:27.051"></status>
+</kw>
+<kw name="Register Button Should Be Enabled" library="resource">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:13:27.052" endtime="20210127 18:13:36.098"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:13:27.052" endtime="20210127 18:13:36.098"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:13:36.099" endtime="20210127 18:13:41.148"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:12:15.647" endtime="20210127 18:13:41.149" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Displaying of different types of error messages during registration if invalid input(s) is(are) spotted">
+<kw name="Open Browser to Register Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:13:41.152" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/register'.</msg>
+<status status="PASS" starttime="20210127 18:13:41.152" endtime="20210127 18:13:49.059"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:13:49.059" endtime="20210127 18:13:52.060"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:13:52.060" endtime="20210127 18:13:57.304"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:13:57.305" endtime="20210127 18:13:57.306"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:13:57.306" endtime="20210127 18:14:00.347"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:14:00.349" endtime="20210127 18:14:06.400"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:14:00.348" endtime="20210127 18:14:06.401"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:13:41.151" endtime="20210127 18:14:06.401"></status>
+</kw>
+<kw name="Input First Name" library="resource">
+<arguments>
+<arg>${INVALID FIRSTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>firstName</arg>
+<arg>${FirstName}</arg>
+</arguments>
+<msg timestamp="20210127 18:14:06.405" level="INFO">Typing text 'GG12' into text field 'firstName'.</msg>
+<status status="PASS" starttime="20210127 18:14:06.404" endtime="20210127 18:14:15.603"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:14:06.403" endtime="20210127 18:14:15.603"></status>
+</kw>
+<kw name="Input Last Name" library="resource">
+<arguments>
+<arg>${INVALID LASTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>lastName</arg>
+<arg>${LastName}</arg>
+</arguments>
+<msg timestamp="20210127 18:14:15.604" level="INFO">Typing text 'WP34' into text field 'lastName'.</msg>
+<status status="PASS" starttime="20210127 18:14:15.604" endtime="20210127 18:14:24.830"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:14:15.604" endtime="20210127 18:14:24.831"></status>
+</kw>
+<kw name="Input Register Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+<arg>${RegUsername}</arg>
+</arguments>
+<msg timestamp="20210127 18:14:24.835" level="INFO">Typing text 'GGWP123456' into text field 'regUsername'.</msg>
+<status status="PASS" starttime="20210127 18:14:24.834" endtime="20210127 18:14:34.040"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:14:24.832" endtime="20210127 18:14:34.041"></status>
+</kw>
+<kw name="Input Email" library="resource">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20210127 18:14:34.044" level="INFO">Typing text 'GGWP123456@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20210127 18:14:34.043" endtime="20210127 18:14:43.375"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:14:34.042" endtime="20210127 18:14:43.375"></status>
+</kw>
+<kw name="Input Register Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${RegPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:14:43.377" level="INFO">Typing text 'GgWp123456!' into text field 'password'.</msg>
+<status status="PASS" starttime="20210127 18:14:43.376" endtime="20210127 18:14:52.542"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:14:43.376" endtime="20210127 18:14:52.543"></status>
+</kw>
+<kw name="Input Confirm Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>confirmPassword</arg>
+<arg>${ConfirmPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:14:52.546" level="INFO">Typing text 'GgWp123456!' into text field 'confirmPassword'.</msg>
+<status status="PASS" starttime="20210127 18:14:52.546" endtime="20210127 18:15:01.751"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:14:52.544" endtime="20210127 18:15:01.751"></status>
+</kw>
+<kw name="Click Register Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:15:01.752" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:15:01.752" endtime="20210127 18:15:13.848"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:15:01.752" endtime="20210127 18:15:13.848"></status>
+</kw>
+<kw name="Element Message Open Register" library="resource">
+<arguments>
+<arg>Name must contain letters only. If your name has spaces, use only one space.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>registerError</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:15:13.850" level="INFO">Verifying element 'registerError' contains exact text 'Name must contain letters only. If your name has spaces, use only one space.'.</msg>
+<status status="PASS" starttime="20210127 18:15:13.850" endtime="20210127 18:15:19.898"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:15:13.849" endtime="20210127 18:15:19.898"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>firstName</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:15:19.900" endtime="20210127 18:15:25.979"></status>
+</kw>
+<kw name="Input First Name" library="resource">
+<arguments>
+<arg>${VALID FIRSTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>firstName</arg>
+<arg>${FirstName}</arg>
+</arguments>
+<msg timestamp="20210127 18:15:25.984" level="INFO">Typing text 'GG' into text field 'firstName'.</msg>
+<status status="PASS" starttime="20210127 18:15:25.983" endtime="20210127 18:15:35.155"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:15:25.981" endtime="20210127 18:15:35.156"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>lastName</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:15:35.158" endtime="20210127 18:15:41.210"></status>
+</kw>
+<kw name="Input Last Name" library="resource">
+<arguments>
+<arg>${VALID LASTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>lastName</arg>
+<arg>${LastName}</arg>
+</arguments>
+<msg timestamp="20210127 18:15:41.214" level="INFO">Typing text 'WP' into text field 'lastName'.</msg>
+<status status="PASS" starttime="20210127 18:15:41.214" endtime="20210127 18:15:50.335"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:15:41.212" endtime="20210127 18:15:50.335"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:15:50.336" endtime="20210127 18:15:56.383"></status>
+</kw>
+<kw name="Input Register Username" library="resource">
+<arguments>
+<arg>${INVALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+<arg>${RegUsername}</arg>
+</arguments>
+<msg timestamp="20210127 18:15:56.385" level="INFO">Typing text 'GGWP1234!' into text field 'regUsername'.</msg>
+<status status="PASS" starttime="20210127 18:15:56.384" endtime="20210127 18:16:05.557"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:15:56.384" endtime="20210127 18:16:05.557"></status>
+</kw>
+<kw name="Click Register Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:16:05.559" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:16:05.559" endtime="20210127 18:16:17.681"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:16:05.558" endtime="20210127 18:16:17.681"></status>
+</kw>
+<kw name="Element Message Open Register" library="resource">
+<arguments>
+<arg>Username must contain letters and/or numbers only, and must be 8-20 characters long.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>registerError</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:16:17.684" level="INFO">Verifying element 'registerError' contains exact text 'Username must contain letters and/or numbers only, and must be 8-20 characters long.'.</msg>
+<status status="PASS" starttime="20210127 18:16:17.683" endtime="20210127 18:16:23.725"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:16:17.682" endtime="20210127 18:16:23.725"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:16:23.725" endtime="20210127 18:16:29.805"></status>
+</kw>
+<kw name="Input Register Username" library="resource">
+<arguments>
+<arg>${EXISTING USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+<arg>${RegUsername}</arg>
+</arguments>
+<msg timestamp="20210127 18:16:29.807" level="INFO">Typing text 'GGWP1234' into text field 'regUsername'.</msg>
+<status status="PASS" starttime="20210127 18:16:29.806" endtime="20210127 18:16:38.988"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:16:29.806" endtime="20210127 18:16:38.989"></status>
+</kw>
+<kw name="Click Register Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:16:38.991" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:16:38.991" endtime="20210127 18:16:51.078"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:16:38.990" endtime="20210127 18:16:51.078"></status>
+</kw>
+<kw name="Element Message Open Register" library="resource">
+<arguments>
+<arg>That username is already in use.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>registerError</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:16:51.080" level="INFO">Verifying element 'registerError' contains exact text 'That username is already in use.'.</msg>
+<status status="PASS" starttime="20210127 18:16:51.079" endtime="20210127 18:16:57.098"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:16:51.079" endtime="20210127 18:16:57.098"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:16:57.098" endtime="20210127 18:17:03.130"></status>
+</kw>
+<kw name="Input Register Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+<arg>${RegUsername}</arg>
+</arguments>
+<msg timestamp="20210127 18:17:03.131" level="INFO">Typing text 'GGWP123456' into text field 'regUsername'.</msg>
+<status status="PASS" starttime="20210127 18:17:03.131" endtime="20210127 18:17:12.325"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:17:03.130" endtime="20210127 18:17:12.325"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:17:12.326" endtime="20210127 18:17:18.425"></status>
+</kw>
+<kw name="Input Email" library="resource">
+<arguments>
+<arg>${INVALID EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20210127 18:17:18.428" level="INFO">Typing text 'GGWP123456@gmail' into text field 'email'.</msg>
+<status status="PASS" starttime="20210127 18:17:18.427" endtime="20210127 18:17:27.646"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:17:18.425" endtime="20210127 18:17:27.646"></status>
+</kw>
+<kw name="Click Register Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:17:27.648" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:17:27.648" endtime="20210127 18:17:39.705"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:17:27.648" endtime="20210127 18:17:39.705"></status>
+</kw>
+<kw name="Element Message Open Register" library="resource">
+<arguments>
+<arg>Please enter a valid email.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>registerError</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:17:39.706" level="INFO">Verifying element 'registerError' contains exact text 'Please enter a valid email.'.</msg>
+<status status="PASS" starttime="20210127 18:17:39.706" endtime="20210127 18:17:45.726"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:17:39.706" endtime="20210127 18:17:45.726"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:17:45.727" endtime="20210127 18:17:51.786"></status>
+</kw>
+<kw name="Input Email" library="resource">
+<arguments>
+<arg>${EXISTING EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20210127 18:17:51.791" level="INFO">Typing text 'geosefuy@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20210127 18:17:51.790" endtime="20210127 18:18:01.050"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:17:51.788" endtime="20210127 18:18:01.050"></status>
+</kw>
+<kw name="Click Register Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:18:01.052" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:18:01.052" endtime="20210127 18:18:13.161"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:18:01.051" endtime="20210127 18:18:13.162"></status>
+</kw>
+<kw name="Element Message Open Register" library="resource">
+<arguments>
+<arg>That email is already in use.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>registerError</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:18:13.165" level="INFO">Verifying element 'registerError' contains exact text 'That email is already in use.'.</msg>
+<status status="PASS" starttime="20210127 18:18:13.165" endtime="20210127 18:18:19.232"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:18:13.163" endtime="20210127 18:18:19.233"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:18:19.234" endtime="20210127 18:18:25.280"></status>
+</kw>
+<kw name="Input Email" library="resource">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20210127 18:18:25.281" level="INFO">Typing text 'GGWP123456@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20210127 18:18:25.281" endtime="20210127 18:18:34.466"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:18:25.280" endtime="20210127 18:18:34.466"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:18:34.467" endtime="20210127 18:18:40.514"></status>
+</kw>
+<kw name="Input Register Password" library="resource">
+<arguments>
+<arg>${INVALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${RegPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:18:40.515" level="INFO">Typing text '1234' into text field 'password'.</msg>
+<status status="PASS" starttime="20210127 18:18:40.515" endtime="20210127 18:18:49.627"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:18:40.514" endtime="20210127 18:18:49.627"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>confirmPassword</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:18:49.628" endtime="20210127 18:18:55.664"></status>
+</kw>
+<kw name="Input Confirm Password" library="resource">
+<arguments>
+<arg>${INVALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>confirmPassword</arg>
+<arg>${ConfirmPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:18:55.665" level="INFO">Typing text '1234' into text field 'confirmPassword'.</msg>
+<status status="PASS" starttime="20210127 18:18:55.665" endtime="20210127 18:19:04.770"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:18:55.664" endtime="20210127 18:19:04.771"></status>
+</kw>
+<kw name="Click Register Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:19:04.774" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:19:04.773" endtime="20210127 18:19:16.926"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:19:04.772" endtime="20210127 18:19:16.926"></status>
+</kw>
+<kw name="Element Message Open Register" library="resource">
+<arguments>
+<arg>Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>registerError</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:19:16.927" level="INFO">Verifying element 'registerError' contains exact text 'Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.'.</msg>
+<status status="PASS" starttime="20210127 18:19:16.927" endtime="20210127 18:19:22.948"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:19:16.927" endtime="20210127 18:19:22.948"></status>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:19:22.949" endtime="20210127 18:19:29.001"></status>
+</kw>
+<kw name="Input Register Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${RegPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:19:29.004" level="INFO">Typing text 'GgWp123456!' into text field 'password'.</msg>
+<status status="PASS" starttime="20210127 18:19:29.004" endtime="20210127 18:19:38.183"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:19:29.002" endtime="20210127 18:19:38.183"></status>
+</kw>
+<kw name="Click Register Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:19:38.185" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:19:38.185" endtime="20210127 18:19:50.291"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:19:38.184" endtime="20210127 18:19:50.292"></status>
+</kw>
+<kw name="Element Message Open Register" library="resource">
+<arguments>
+<arg>Passwords don't match.</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>registerError</arg>
+<arg>${Error}</arg>
+</arguments>
+<msg timestamp="20210127 18:19:50.295" level="INFO">Verifying element 'registerError' contains exact text 'Passwords don't match.'.</msg>
+<status status="PASS" starttime="20210127 18:19:50.294" endtime="20210127 18:19:56.337"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:19:50.293" endtime="20210127 18:19:56.337"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:19:56.339" endtime="20210127 18:20:01.411"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:13:41.150" endtime="20210127 18:20:01.412" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Disabling of button during registration when information given is incomplete">
+<kw name="Open Browser to Register Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:20:01.420" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/register'.</msg>
+<status status="PASS" starttime="20210127 18:20:01.420" endtime="20210127 18:20:09.327"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:20:09.328" endtime="20210127 18:20:12.332"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:20:12.332" endtime="20210127 18:20:17.458"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:20:17.458" endtime="20210127 18:20:17.458"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:20:17.458" endtime="20210127 18:20:20.469"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:20:20.471" endtime="20210127 18:20:26.522"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:20:20.470" endtime="20210127 18:20:26.522"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:20:01.419" endtime="20210127 18:20:26.522"></status>
+</kw>
+<kw name="Input First Name" library="resource">
+<arguments>
+<arg>${VALID FIRSTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>firstName</arg>
+<arg>${FirstName}</arg>
+</arguments>
+<msg timestamp="20210127 18:20:26.524" level="INFO">Typing text 'GG' into text field 'firstName'.</msg>
+<status status="PASS" starttime="20210127 18:20:26.523" endtime="20210127 18:20:35.645"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:20:26.523" endtime="20210127 18:20:35.645"></status>
+</kw>
+<kw name="Register Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:20:35.646" endtime="20210127 18:20:41.670"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:20:35.646" endtime="20210127 18:20:41.670"></status>
+</kw>
+<kw name="Input Last Name" library="resource">
+<arguments>
+<arg>${VALID LASTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>lastName</arg>
+<arg>${LastName}</arg>
+</arguments>
+<msg timestamp="20210127 18:20:41.674" level="INFO">Typing text 'WP' into text field 'lastName'.</msg>
+<status status="PASS" starttime="20210127 18:20:41.673" endtime="20210127 18:20:50.784"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:20:41.671" endtime="20210127 18:20:50.785"></status>
+</kw>
+<kw name="Register Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:20:50.810" endtime="20210127 18:20:56.825"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:20:50.809" endtime="20210127 18:20:56.825"></status>
+</kw>
+<kw name="Input Register Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+<arg>${RegUsername}</arg>
+</arguments>
+<msg timestamp="20210127 18:20:56.827" level="INFO">Typing text 'GGWP123456' into text field 'regUsername'.</msg>
+<status status="PASS" starttime="20210127 18:20:56.826" endtime="20210127 18:21:06.075"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:20:56.826" endtime="20210127 18:21:06.075"></status>
+</kw>
+<kw name="Register Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:21:06.076" endtime="20210127 18:21:12.093"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:21:06.076" endtime="20210127 18:21:12.093"></status>
+</kw>
+<kw name="Input Email" library="resource">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20210127 18:21:12.094" level="INFO">Typing text 'GGWP123456@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20210127 18:21:12.094" endtime="20210127 18:21:21.345"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:21:12.094" endtime="20210127 18:21:21.345"></status>
+</kw>
+<kw name="Register Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:21:21.347" endtime="20210127 18:21:27.381"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:21:21.346" endtime="20210127 18:21:27.382"></status>
+</kw>
+<kw name="Input Register Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${RegPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:21:27.386" level="INFO">Typing text 'GgWp123456!' into text field 'password'.</msg>
+<status status="PASS" starttime="20210127 18:21:27.386" endtime="20210127 18:21:36.568"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:21:27.384" endtime="20210127 18:21:36.569"></status>
+</kw>
+<kw name="Register Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:21:36.572" endtime="20210127 18:21:42.617"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:21:36.571" endtime="20210127 18:21:42.618"></status>
+</kw>
+<kw name="Input Confirm Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>confirmPassword</arg>
+<arg>${ConfirmPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:21:42.619" level="INFO">Typing text 'GgWp123456!' into text field 'confirmPassword'.</msg>
+<status status="PASS" starttime="20210127 18:21:42.619" endtime="20210127 18:21:51.840"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:21:42.618" endtime="20210127 18:21:51.840"></status>
+</kw>
+<kw name="Register Button Should Be Enabled" library="resource">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:21:51.842" endtime="20210127 18:22:00.877"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:21:51.841" endtime="20210127 18:22:00.877"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:22:00.878" endtime="20210127 18:22:05.927"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:20:01.417" endtime="20210127 18:22:05.928" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Redirecting URL to Game Lobby Page after successful registration">
+<kw name="Open Browser to Register Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:22:05.931" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/register'.</msg>
+<status status="PASS" starttime="20210127 18:22:05.931" endtime="20210127 18:22:13.914"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:22:13.914" endtime="20210127 18:22:16.916"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:22:16.916" endtime="20210127 18:22:22.039"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:22:22.039" endtime="20210127 18:22:22.039"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:22:22.039" endtime="20210127 18:22:25.090"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:22:25.090" endtime="20210127 18:22:31.129"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:22:25.090" endtime="20210127 18:22:31.129"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:22:05.931" endtime="20210127 18:22:31.129"></status>
+</kw>
+<kw name="Input First Name" library="resource">
+<arguments>
+<arg>${VALID FIRSTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>firstName</arg>
+<arg>${FirstName}</arg>
+</arguments>
+<msg timestamp="20210127 18:22:31.131" level="INFO">Typing text 'GG' into text field 'firstName'.</msg>
+<status status="PASS" starttime="20210127 18:22:31.131" endtime="20210127 18:22:40.391"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:22:31.130" endtime="20210127 18:22:40.391"></status>
+</kw>
+<kw name="Input Last Name" library="resource">
+<arguments>
+<arg>${VALID LASTNAME}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>lastName</arg>
+<arg>${LastName}</arg>
+</arguments>
+<msg timestamp="20210127 18:22:40.394" level="INFO">Typing text 'WP' into text field 'lastName'.</msg>
+<status status="PASS" starttime="20210127 18:22:40.393" endtime="20210127 18:22:49.636"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:22:40.393" endtime="20210127 18:22:49.636"></status>
+</kw>
+<kw name="Input Register Username" library="resource">
+<arguments>
+<arg>${VALID USER}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>regUsername</arg>
+<arg>${RegUsername}</arg>
+</arguments>
+<msg timestamp="20210127 18:22:49.637" level="INFO">Typing text 'GGWP123456' into text field 'regUsername'.</msg>
+<status status="PASS" starttime="20210127 18:22:49.637" endtime="20210127 18:22:58.788"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:22:49.637" endtime="20210127 18:22:58.788"></status>
+</kw>
+<kw name="Input Email" library="resource">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20210127 18:22:58.789" level="INFO">Typing text 'GGWP123456@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20210127 18:22:58.789" endtime="20210127 18:23:08.005"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:22:58.789" endtime="20210127 18:23:08.006"></status>
+</kw>
+<kw name="Input Register Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${RegPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:23:08.010" level="INFO">Typing text 'GgWp123456!' into text field 'password'.</msg>
+<status status="PASS" starttime="20210127 18:23:08.009" endtime="20210127 18:23:17.192"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:23:08.008" endtime="20210127 18:23:17.192"></status>
+</kw>
+<kw name="Input Confirm Password" library="resource">
+<arguments>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>confirmPassword</arg>
+<arg>${ConfirmPassword}</arg>
+</arguments>
+<msg timestamp="20210127 18:23:17.193" level="INFO">Typing text 'GgWp123456!' into text field 'confirmPassword'.</msg>
+<status status="PASS" starttime="20210127 18:23:17.193" endtime="20210127 18:23:26.348"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:23:17.193" endtime="20210127 18:23:26.348"></status>
+</kw>
+<kw name="Click Register Button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20210127 18:23:26.349" level="INFO">Clicking button 'btnSubmit'.</msg>
+<status status="PASS" starttime="20210127 18:23:26.349" endtime="20210127 18:23:38.473"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:23:26.349" endtime="20210127 18:23:38.473"></status>
+</kw>
+<kw name="Game Lobby Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:23:38.475" endtime="20210127 18:23:38.476"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${GAME LOBBY URL}</arg>
+</arguments>
+<msg timestamp="20210127 18:23:41.486" level="INFO">Current location is 'http://localhost:8080/#/'.</msg>
+<status status="PASS" starttime="20210127 18:23:38.476" endtime="20210127 18:23:41.486"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>GameLobbyTable</arg>
+</arguments>
+<msg timestamp="20210127 18:23:47.525" level="INFO">Element 'GameLobbyTable' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:23:41.486" endtime="20210127 18:23:47.525"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerName</arg>
+</arguments>
+<msg timestamp="20210127 18:23:53.572" level="INFO">Element 'headerName' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:23:47.525" endtime="20210127 18:23:53.572"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerHost</arg>
+</arguments>
+<msg timestamp="20210127 18:23:59.598" level="INFO">Element 'headerHost' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:23:53.572" endtime="20210127 18:23:59.598"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>headerButtonCont</arg>
+</arguments>
+<msg timestamp="20210127 18:24:05.647" level="INFO">Element 'headerButtonCont' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:23:59.599" endtime="20210127 18:24:05.647"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:24:05.647" endtime="20210127 18:24:05.647"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:23:38.474" endtime="20210127 18:24:05.647"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:24:05.648" endtime="20210127 18:24:07.935"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:22:05.929" endtime="20210127 18:24:07.936" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Redirecting URL to Login Page after Login here text is clicked">
+<kw name="Open Browser to Register Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${REGISTER URL}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20210127 18:24:07.944" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/#/register'.</msg>
+<status status="PASS" starttime="20210127 18:24:07.944" endtime="20210127 18:24:12.852"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<doc>Sets the timeout that is used by various keywords.</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:24:12.852" endtime="20210127 18:24:12.854"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210127 18:24:12.855" endtime="20210127 18:24:14.975"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:24:14.975" endtime="20210127 18:24:14.975"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:24:14.975" endtime="20210127 18:24:17.990"></status>
+</kw>
+<kw name="Login Button Should Be Disabled" library="resource">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:24:17.992" endtime="20210127 18:24:24.031"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:24:17.990" endtime="20210127 18:24:24.032"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:24:07.942" endtime="20210127 18:24:24.032"></status>
+</kw>
+<kw name="Click Login here Text" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>linkLogin</arg>
+</arguments>
+<msg timestamp="20210127 18:24:24.036" level="INFO">Clicking element 'linkLogin'.</msg>
+<status status="PASS" starttime="20210127 18:24:24.035" endtime="20210127 18:24:30.179"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:24:24.034" endtime="20210127 18:24:30.180"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:24:30.184" endtime="20210127 18:24:30.185"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20210127 18:24:33.200" level="INFO">Current location is 'http://localhost:8080/#/login'.</msg>
+<status status="PASS" starttime="20210127 18:24:30.185" endtime="20210127 18:24:33.200"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>pageLogin</arg>
+</arguments>
+<msg timestamp="20210127 18:24:39.295" level="INFO">Element 'pageLogin' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:24:33.201" endtime="20210127 18:24:39.295"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>loginUsername</arg>
+</arguments>
+<msg timestamp="20210127 18:24:45.386" level="INFO">Element 'loginUsername' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:24:39.295" endtime="20210127 18:24:45.386"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>loginPassword</arg>
+</arguments>
+<msg timestamp="20210127 18:24:51.432" level="INFO">Element 'loginPassword' is displayed.</msg>
+<status status="PASS" starttime="20210127 18:24:45.386" endtime="20210127 18:24:51.432"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0</arg>
+</arguments>
+<status status="PASS" starttime="20210127 18:24:51.432" endtime="20210127 18:24:51.433"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:24:30.182" endtime="20210127 18:24:51.433"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210127 18:24:51.435" endtime="20210127 18:24:53.620"></status>
+</kw>
+<status status="PASS" starttime="20210127 18:24:07.940" endtime="20210127 18:24:53.620" critical="yes"></status>
+</test>
+<doc>A test suite with tests for register.</doc>
+<status status="PASS" starttime="20210127 18:12:15.460" endtime="20210127 18:24:53.622"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" id="s1" name="Register">Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
