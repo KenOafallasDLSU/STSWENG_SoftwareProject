@@ -24,7 +24,7 @@ ${VALID PASSWORD2}     P@ssword2  #GgWp123456!
 ${NEWVALID PASSWORD}  GGWP123456!
 ${INVALID PASSWORD}   1234
 ${VALID ROOM}         t3st room
-${INVALID ROOM}       Byron
+${INVALID ROOM}       cloudtest
 ${LOGIN URL}          http://${SERVER}/#/login
 ${REGISTER URL}       http://${SERVER}/#/register
 ${GAME LOBBY URL}     http://${SERVER}/#/
@@ -184,6 +184,9 @@ SELECT 3 MIN
 
 SELECT 1 MIN
     Click Element                   minutes-1
+
+Close Room
+    Click Element                   xpath=//div[@id='left-button']/button
     
 Game Lobby Page Should Be Open
     Wait For Page Load
@@ -196,11 +199,9 @@ Game Lobby Page Should Be Open
 
 Waiting Room Page Should Be Open
     Wait For Page Load
-    ### Temporary
-    Element Should be Visible       GameLobbyTable
-    Element Should be Visible       headerName
-    Element Should be Visible       headerHost
-    Element Should be Visible       headerButtonCont
+    Element Should be Visible       waiting-room-label
+    Element Should be Visible       left-panel
+    Element Should be Visible       right-panel
     Set Selenium Speed              2
 
 Register Page Should Be Open

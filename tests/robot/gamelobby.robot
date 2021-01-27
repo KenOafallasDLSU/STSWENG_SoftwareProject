@@ -89,9 +89,7 @@ Functionality Checking for Create Room
     Click Create Room
     Create Button Disabled
     Input Room Name                     ${INVALID ROOM}
-    Click Room Type
     Click Public
-    Click Room Type
     Click Private
     Create Button Disabled
     SELECT 10 MIN
@@ -124,11 +122,9 @@ Redirecting to Waiting Room after Create Room
     Wait For Page Load
     Click Create Room
     Input Room Name                     ${VALID ROOM}
-    Click Room Type
     Click Public
     SELECT 10 MIN
     Click Create
-    Element Should Be Visible           name-alert
-    Element Message Open Create         Room name not available!
     Waiting Room Page Should Be Open
+    Close Room
     [Teardown]                          Close Browser
