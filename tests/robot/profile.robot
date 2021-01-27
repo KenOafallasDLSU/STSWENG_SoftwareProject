@@ -11,6 +11,7 @@ Staying on Profile Page after Profile text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Profile Page Should Be Open
@@ -24,6 +25,7 @@ Redirecting URL to Game Lobby Page after Play text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Profile Page Should Be Open
@@ -38,6 +40,7 @@ Redirecting URL to Leaderboard Page after Leaderboard text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Profile Page Should Be Open
@@ -51,6 +54,7 @@ Redirecting URL to Instruction Page after How to Play text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Profile Page Should Be Open
@@ -64,6 +68,7 @@ Redirecting URL to Login Page after Logout text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Profile Page Should Be Open
@@ -77,6 +82,7 @@ Redirecting URL to Change Password Page after Change password text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Profile Page Should Be Open

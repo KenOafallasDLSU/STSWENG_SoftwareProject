@@ -11,6 +11,7 @@ Redirecting URL to Game Lobby Page after Play text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
@@ -24,6 +25,7 @@ Redirecting URL to Profile Page after Profile text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
@@ -37,6 +39,7 @@ Redirecting URL to Leaderboard Page after Leaderboard text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
@@ -50,6 +53,7 @@ Redirecting URL to Instruction Page after How to Play text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
@@ -63,6 +67,7 @@ Redirecting URL to Login Page after Logout text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
@@ -76,16 +81,17 @@ Error Message Display for Change Password Step 1
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
     Input Email                   ${INVALID EMAIL}
-    Input Password                ${INVALID PASSWORD}
+    Input ChangePW Password       ${INVALID PASSWORD}
     Click Continue Button
-    Element Change Open ChangePW  The email you entered is incorrect.
-    Input Email                   ${VALID EMAIL}
+    Element Message Open ChangePW  The email you entered is incorrect.
+    Input Email                   ${EXISTING EMAIL}
     Click Continue Button
-    Element Change Open ChangePW  The password you entered is incorrect.
+    Element Message Open ChangePW  The password you entered is incorrect.
     [Teardown]                    Close Browser
 
 Redirecting URL to New Password Page After Successful Verify
@@ -93,11 +99,12 @@ Redirecting URL to New Password Page After Successful Verify
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
-    Input Email                   ${VALID EMAIL}
-    Input Password                ${VALID PASSWORD}
+    Input Email                   ${EXISTING EMAIL}
+    Input ChangePW Password       ${VALID PASSWORD}
     Click Continue Button
     New Password Page Should Be Open
     [Teardown]                    Close Browser
@@ -108,21 +115,24 @@ Error Message Display for Change Password Step 2
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
-    Input Email                   ${VALID EMAIL}
-    Input Password                ${VALID PASSWORD}
+    Input Email                   ${EXISTING EMAIL}
+    Input ChangePW Password       ${VALID PASSWORD}
     Click Continue Button
     Input New Password            ${INVALID PASSWORD}
     Input Confirm New Password    ${INVALID PASSWORD}
     Click Continue button
     Element Message Open NewPW    Password must contain at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.
     Input New Password            ${VALID PASSWORD}
-    Input Confirm New Password    ${INVALID PASSWORD}
+    Input Confirm New Password    ${VALID PASSWORD2}
+    Click Continue Button
     Element Message Open NewPW    Passwords don't match.
     Input New Password            ${VALID PASSWORD}
     Input Confirm New Password    ${VALID PASSWORD}
+    Click Continue Button
     Element Message Open NewPW    New password can't be the same as the old password.
 
 Redirecting URL to Login Page After Successful Change Password
@@ -130,12 +140,14 @@ Redirecting URL to Login Page After Successful Change Password
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Profile
     Click Change Password
-    Input Email                   ${VALID EMAIL}
-    Input Password                ${VALID PASSWORD}
+    Input Email                   ${EXISTING EMAIL}
+    Input ChangePW Password       ${VALID PASSWORD}
     Click Continue button
     Input New Password            ${NEWVALID PASSWORD}
     Input Confirm New Password    ${NEWVALID PASSWORD}
+    Click Continue Button
     [Teardown]                    Close Browser

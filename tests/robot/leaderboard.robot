@@ -11,6 +11,7 @@ Redirecting URL to Game Lobby Page after Play text is clicked
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Leaderboard
     Leaderboard Page Should Be Open
@@ -24,6 +25,7 @@ Redirecting URL to Profile Page after Profile text is clicked
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Leaderboard
     Leaderboard Page Should Be Open
@@ -37,6 +39,7 @@ Staying on Leaderboard Page after Leaderboard text is clicked
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Leaderboard
     Leaderboard Page Should Be Open
@@ -50,6 +53,7 @@ Redirecting URL to Instruction Page after How to Play text is clicked
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Leaderboard
     Leaderboard Page Should Be Open
@@ -63,6 +67,7 @@ Redirecting URL to Login Page after Logout text is clicked
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Leaderboard
     Leaderboard Page Should Be Open
@@ -76,6 +81,7 @@ Displaying of different leaderboard criterion
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Leaderboard
     Leaderboard Page Should Be Open
@@ -95,6 +101,7 @@ Displaying of rank, username and points in the leaderboard in a table format
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Sidenav
     Click Leaderboard
     Leaderboard Page Should Be Open

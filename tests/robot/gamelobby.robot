@@ -11,11 +11,10 @@ Staying on Game Lobby Page after Play text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
-    Click Sidenav
-    Click Play
+    Wait For Page Load
     Game Lobby Page Should Be Open
     Click Sidenav
-    Click Same Field
+    Click Play
     Game Lobby Page Should Be Open
     [Teardown]                    Close Browser
 
@@ -24,8 +23,7 @@ Redirecting URL to Profile Page after Profile text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
-    Click Sidenav
-    Click Play
+    Wait For Page Load
     Game Lobby Page Should Be Open
     Click Sidenav
     Click Profile
@@ -38,8 +36,7 @@ Redirecting URL to Leaderboard Page after Leaderboard text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
-    Click Sidenav
-    Click Play
+    Wait For Page Load
     Game Lobby Page Should Be Open
     Click Sidenav
     Click Leaderboard
@@ -51,8 +48,7 @@ Redirecting URL to Instruction Page after How to Play text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
-    Click Sidenav
-    Click Play
+    Wait For Page Load
     Game Lobby Page Should Be Open
     Click Sidenav
     Click How to Play
@@ -64,8 +60,7 @@ Redirecting URL to Login Page after Logout text is clicked
     Input Username                ${VALID USER}
     Input Password                ${VALID PASSWORD}
     Click Login Button
-    Click Sidenav
-    Click Play
+    Wait For Page Load
     Game Lobby Page Should Be Open
     Click Sidenav
     Click Logout
@@ -77,6 +72,7 @@ Displaying of Different Pages of Game Lobbies
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Game Lobby Page Number              1
     Click Triangle Right Icon
     Game Lobby Page Number              2
@@ -89,11 +85,14 @@ Functionality Checking for Create Room
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Create Room
     Create Button Disabled
     Input Room Name                     ${INVALID ROOM}
-    Select From List By Value    type-select   Public
-    Select From List By Value    type-select   Private
+    Click Room Type
+    Click Public
+    Click Room Type
+    Click Private
     Create Button Disabled
     SELECT 10 MIN
     SELECT 5 MIN
@@ -107,9 +106,10 @@ Displaying of Error Message for Create Room
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Create Room
     Input Room Name                     ${INVALID ROOM}
-    Select From List By Value    type-select   Public
+    Click Public
     SELECT 10 MIN
     Click Create
     Element Should Be Visible           name-alert
@@ -121,11 +121,14 @@ Redirecting to Waiting Room after Create Room
     Input Username                      ${VALID USER}
     Input Password                      ${VALID PASSWORD}
     Click Login Button
+    Wait For Page Load
     Click Create Room
     Input Room Name                     ${VALID ROOM}
-    Select From List By Value    type-select   Public
+    Click Room Type
+    Click Public
     SELECT 10 MIN
     Click Create
     Element Should Be Visible           name-alert
     Element Message Open Create         Room name not available!
     Waiting Room Page Should Be Open
+    [Teardown]                          Close Browser

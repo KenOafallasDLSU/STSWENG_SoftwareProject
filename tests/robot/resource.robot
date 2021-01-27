@@ -20,6 +20,7 @@ ${EXISTING USER}      GGWP1234
 ${VALID USER}         geosefuy  #GGWP123456
 ${INVALID USER}       GGWP1234!
 ${VALID PASSWORD}     P@ssword1  #GgWp123456!
+${VALID PASSWORD2}     P@ssword2  #GgWp123456!
 ${NEWVALID PASSWORD}  GGWP123456!
 ${INVALID PASSWORD}   1234
 ${VALID ROOM}         t3st room
@@ -38,7 +39,7 @@ Open Browser to Login Page
     Open Browser  ${LOGIN URL}      Firefox
     Set Selenium Timeout            20 seconds
     Maximize Browser Window
-    Set Selenium Speed              3
+    Set Selenium Speed              2
     Wait Until Page Contains Element    btnSubmit
     Login Button Should Be Disabled
 
@@ -46,7 +47,7 @@ Open Browser to Register Page
     Open Browser  ${REGISTER URL}   Firefox
     Set Selenium Timeout            20 seconds
     Maximize Browser Window
-    Set Selenium Speed              3
+    Set Selenium Speed              2
     Wait Until Page Contains Element    btnSubmit
     Login Button Should Be Disabled
 
@@ -90,6 +91,10 @@ Input Register Password
     [Arguments]   ${RegPassword}
     Input Text    password          ${RegPassword}
 
+Input ChangePW Password
+    [Arguments]   ${Password}
+    Input Text    password          ${Password}
+
 Input Confirm Password
     [Arguments]   ${ConfirmPassword}
     Input Text    confirmPassword   ${ConfirmPassword}
@@ -105,6 +110,9 @@ Input Confirm New Password
 Input Room Name
     [Arguments]   ${RoomName}
     Input Text    room-name-input   ${RoomName}
+
+Wait For Page Load
+    Wait Until Page Contains Element    menu
 
 Click Login Button
     Click Button                    btnSubmit
@@ -157,6 +165,14 @@ Click Create Room
 Click Create
     Click Element                   create-button
 
+Click Public
+    Click Element                   type-select
+    Click Element                   xpath=//option[contains(.,'Public')]
+    
+Click Private
+    Click Element                   type-select
+    Click Element                   xpath=//option[contains(.,'Private')]
+
 SELECT 10 MIN
     Click Element                   minutes-10
 
@@ -170,25 +186,24 @@ SELECT 1 MIN
     Click Element                   minutes-1
     
 Game Lobby Page Should Be Open
-    Set Selenium Speed              3
+    Wait For Page Load
     Location Should Be              ${GAME LOBBY URL}
     Element Should be Visible       GameLobbyTable
     Element Should be Visible       headerName
     Element Should be Visible       headerHost
     Element Should be Visible       headerButtonCont
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 Waiting Room Page Should Be Open
-    Set Selenium Speed              3
+    Wait For Page Load
     ### Temporary
     Element Should be Visible       GameLobbyTable
     Element Should be Visible       headerName
     Element Should be Visible       headerHost
     Element Should be Visible       headerButtonCont
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 Register Page Should Be Open
-    Set Selenium Speed              3
     Location Should Be              ${REGISTER URL}
     Element Should be Visible       firstName
     Element Should be Visible       lastName
@@ -196,30 +211,29 @@ Register Page Should Be Open
     Element Should be Visible       email
     Element Should be Visible       password
     Element Should be Visible       confirmPassword
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 Login Page Should Be Open
-    Set Selenium Speed              3
     Location Should Be              ${LOGIN URL}
     Element Should be Visible       pageLogin
     Element Should be Visible       loginUsername
     Element Should be Visible       loginPassword
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 Profile Page Should Be Open
-    Set Selenium Speed              3
+    Wait For Page Load
     Location Should Be              ${PROFILE URL}
     Element Should be Visible       user-details
     Element Should be Visible       hello
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 Leaderboard Page Should Be Open
-    Set Selenium Speed              3
+    Wait For Page Load
     Location Should Be              ${LEADERBOARD URL}
     Element Should be Visible       LeaderboardPage
     Element Should be Visible       LeaderboardTable
     Element Should be Visible       CriteriaSelect
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 Rank Username And Score Should Be Visible
     Element Should be Visible       class:leaderRank
@@ -228,28 +242,28 @@ Rank Username And Score Should Be Visible
     Set Selenium Speed              3
 
 Instruction Page Should Be Open
-    Set Selenium Speed              3
+    Wait For Page Load
     Location Should Be              ${INSTRUCTION URL}
     Element Should be Visible       instructions-box
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 Change Password Page Should Be Open
-    Set Selenium Speed              3
+    Wait For Page Load
     Location Should Be              ${CHANGEPW URL}
     Element Should be Visible       sectionLoginForm
     Element Should be Visible       email
     Element Should be Visible       password
     Element Should be Visible       go-back
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 New Password Page Should Be Open
-    Set Selenium Speed              3
+    Wait For Page Load
     Location Should Be              ${CHANGEPW2 URL}
     Element Should be Visible       sectionLoginForm
     Element Should be Visible       password
     Element Should be Visible       confirm-password
     Element Should be Visible       go-back
-    Set Selenium Speed              3
+    Set Selenium Speed              2
 
 Element Message Open Login
     [Arguments]   ${Error}
