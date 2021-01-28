@@ -15,16 +15,18 @@ ${INVALID FIRSTNAME}  GG12
 ${INVALID LASTNAME}   WP34
 ${EXISTING EMAIL}     geosefuy@gmail.com
 ${VALID EMAIL}        GGWP123456@gmail.com
+${VALID REGEMAIL}     geosefuyreg@gmail.com
 ${INVALID EMAIL}      GGWP123456@gmail
 ${EXISTING USER}      GGWP1234
 ${VALID USER}         geosefuy  #GGWP123456
+${VALID REGUSER}      geosefuyreg
 ${INVALID USER}       GGWP1234!
 ${VALID PASSWORD}     P@ssword1  #GgWp123456!
-${VALID PASSWORD2}     P@ssword2  #GgWp123456!
+${VALID PASSWORD2}    P@ssword2  #GgWp123456!
 ${NEWVALID PASSWORD}  GGWP123456!
 ${INVALID PASSWORD}   1234
 ${VALID ROOM}         t3st room
-${INVALID ROOM}       cloudtest
+${INVALID ROOM}       existing room
 ${LOGIN URL}          http://${SERVER}/#/login
 ${REGISTER URL}       http://${SERVER}/#/register
 ${GAME LOBBY URL}     http://${SERVER}/#/

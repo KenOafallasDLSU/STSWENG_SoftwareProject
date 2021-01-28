@@ -10,8 +10,8 @@ Preprocessing of account during registration
     Open Browser to Register Page
     Input First Name                ${VALID FIRSTNAME}
     Input Last Name                 ${VALID LASTNAME}
-    Input Register Username         ${VALID USER}
-    Input Email                     ${VALID EMAIL}
+    Input Register Username         ${VALID REGUSER}
+    Input Email                     ${VALID REGEMAIL}
     Input Register Password         ${VALID PASSWORD}
     Input Confirm Password          ${VALID PASSWORD}
     Register Button Should Be Enabled
@@ -21,8 +21,8 @@ Displaying of different types of error messages during registration if invalid i
     Open Browser to Register Page
     Input First Name                ${INVALID FIRSTNAME}
     Input Last Name                 ${INVALID LASTNAME}
-    Input Register Username         ${VALID USER}
-    Input Email                     ${VALID EMAIL}
+    Input Register Username         ${VALID REGUSER}
+    Input Email                     ${VALID REGEMAIL}
     Input Register Password         ${VALID PASSWORD}
     Input Confirm Password          ${VALID PASSWORD}
     Click Register Button
@@ -40,7 +40,7 @@ Displaying of different types of error messages during registration if invalid i
     Click Register Button
     Element Message Open Register   That username is already in use.
     Clear Element Text              regUsername
-    Input Register Username         ${VALID USER}
+    Input Register Username         ${VALID REGUSER}
     Clear Element Text              email
     Input Email                     ${INVALID EMAIL}
     Click Register Button
@@ -50,7 +50,7 @@ Displaying of different types of error messages during registration if invalid i
     Click Register button
     Element Message Open Register   That email is already in use.
     Clear Element Text              email
-    Input Email                     ${VALID EMAIL}
+    Input Email                     ${VALID REGEMAIL}
     Clear Element Text              password
     Input Register Password         ${INVALID PASSWORD}
     Clear Element Text              confirmPassword
@@ -69,9 +69,9 @@ Disabling of button during registration when information given is incomplete
     Register Button Should Be Disabled
     Input Last Name                 ${VALID LASTNAME}
     Register Button Should Be Disabled
-    Input Register Username         ${VALID USER}
+    Input Register Username         ${VALID REGUSER}
     Register Button Should Be Disabled
-    Input Email                     ${VALID EMAIL}
+    Input Email                     ${VALID REGEMAIL}
     Register Button Should Be Disabled
     Input Register Password         ${VALID PASSWORD}
     Register Button Should Be Disabled
@@ -83,8 +83,8 @@ Redirecting URL to Game Lobby Page after successful registration
     Open Browser to Register Page
     Input First Name                ${VALID FIRSTNAME}
     Input Last Name                 ${VALID LASTNAME}
-    Input Register Username         ${VALID USER}
-    Input Email                     ${VALID EMAIL}
+    Input Register Username         ${VALID REGUSER}
+    Input Email                     ${VALID REGEMAIL}
     Input Register Password         ${VALID PASSWORD}
     Input Confirm Password          ${VALID PASSWORD}
     Click Register Button

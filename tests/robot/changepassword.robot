@@ -134,6 +134,7 @@ Error Message Display for Change Password Step 2
     Input Confirm New Password    ${VALID PASSWORD}
     Click Continue Button
     Element Message Open NewPW    New password can't be the same as the old password.
+    [Teardown]                    Close Browser
 
 Redirecting URL to Login Page After Successful Change Password
     Open Browser to Login Page

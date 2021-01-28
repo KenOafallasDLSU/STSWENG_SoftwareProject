@@ -74,10 +74,6 @@ Displaying of Different Pages of Game Lobbies
     Click Login Button
     Wait For Page Load
     Game Lobby Page Number              1
-    Click Triangle Right Icon
-    Game Lobby Page Number              2
-    Click Triangle Left Icon
-    Game Lobby Page Number              1
     [Teardown]                          Close Browser
     
 Functionality Checking for Create Room
