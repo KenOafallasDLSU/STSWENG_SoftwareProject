@@ -148,7 +148,8 @@ Redirecting URL to Login Page After Successful Change Password
     Input Email                   ${EXISTING EMAIL}
     Input ChangePW Password       ${VALID PASSWORD}
     Click Continue button
-    Input New Password            ${NEWVALID PASSWORD}
-    Input Confirm New Password    ${NEWVALID PASSWORD}
+    Input New Password            ${VALID PASSWORD2}
+    Input Confirm New Password    ${VALID PASSWORD2}
     Click Continue Button
+    Login Page Should Be Open
     [Teardown]                    Close Browser
