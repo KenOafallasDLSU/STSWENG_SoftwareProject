@@ -17,6 +17,44 @@
       <div>The room has been closed by the owner. Returning to lobby...</div>
     </b-modal>
 
+    <b-modal v-model="isBeginning" id="begin-modal" @ok="goToGame" hide-header>
+      <div class="text-center">
+        <div class="font-weight-bold">
+          Select color for Host:
+        </div>
+        <div class = "begin-modal-row">
+          <div class = "begin-modal-column" @click="hostColor = 'w'">
+            <div class = "square">
+              <div id="pickWhite" class="chip white-chip">
+              </div>
+            </div>
+            <div v-bind:class="{'box-active': hostColor === 'w', 'box-inactive': hostColor !== 'w'}">
+              White
+            </div>
+          </div>
+          <div class = "begin-modal-column" @click="hostColor = 'b'">
+            <div class = "square">
+              <div id="pickBlack" class="chip black-chip">
+              </div>
+            </div>
+            <div v-bind:class="{'box-active': hostColor === 'b', 'box-inactive': hostColor !== 'b'}">
+              Black
+            </div>
+          </div>
+          <div class = "begin-modal-column" @click="hostColor = 'r'">
+            <div class = "square">
+              <div id="pickRand" class="chip rand-chip">
+                <img class="questionMark" src="../../public/assets/question.png"/>
+              </div>
+            </div>
+            <div v-bind:class="{'box-active': hostColor === 'r', 'box-inactive': hostColor !== 'r'}">
+            Random
+            </div>
+          </div>
+        </div>
+      </div>
+    </b-modal>
+
     <div id = 'waiting-room-proper'>
       <div id="waiting-room-label">Waiting Room</div>
       <div id="room-type">{{room.is_public ? "Public" : "Private"}}</div>
@@ -62,7 +100,7 @@
           <div v-show="isOwner === 1">
             <button :to="`/play`" :disabled="!isFull" 
                     v-bind:class="{'begin-button': isFull, 'begin-disabled': !isFull}"
-                    v-on:click="goToGame">
+                    v-on:click="isBeginning = true">
               Begin
             </button>
           </div>
@@ -81,17 +119,19 @@
 
 <script>
 import firebase from 'firebase'
-import { db, gamesCollection, timersCollection } from '@/firebase'
+import { gamesCollection, timersCollection } from '@/firebase'
 import Sidebar from '@/components/sidebar.vue'
-import { getSingleGame, deleteGame, removeGuest } from '@/resources/gameModel.js'
+import { getSingleGame, deleteGame, removeGuest, setWhitePlayer, setGameStarted } from '@/resources/gameModel.js'
 import { getSingleUser } from '@/resources/userModel.js'
 import { getSingleTimer, changeTime } from '@/resources/timerModel.js'
+import { mapActions } from 'vuex'
 
 export default {
   name: "WaitingRoom",
   components: {
     Sidebar
   },
+
   data() {
     return {
       roomID: "nil",
@@ -115,99 +155,131 @@ export default {
       timeInput: 0,
       gameUnsubscribe: null,
       timeUnsubscribe: null,
-      isKicked: false
+      isKicked: false,
+      isBeginning: false,
+      hostColor: "w"
     }
   },
+
   computed: {
     getHostRate() {
-      if(this.host !== null){
+      if (this.host !== null) {
         const wins = this.host.wins_black + this.host.wins_white
         const draws = this.host.draw_black + this.host.draw_white
         const losses = this.host.loss_white + this.host.loss_black
 
-        if(draws+losses === 0 && wins === 0)
+        if (draws+losses === 0 && wins === 0) {
           return "no games"
-        else if(draws+losses === 0)
+        } else if (draws+losses === 0) {
           return "perfect"
-        else
+        } else {
           return (wins/(wins + losses)*100).toFixed(2) + "%"
+        }
       }
     },
+
     getGuestRate() {
-      if(this.host !== null){
+      if (this.host !== null) {
         const wins = this.guest.wins_black + this.guest.wins_white
         const draws = this.guest.draw_black + this.guest.draw_white
         const losses = this.guest.loss_white + this.guest.loss_black
 
-        if(draws+losses === 0 && wins === 0)
+        if (draws+losses === 0 && wins === 0) {
           return "no games"
-        else if(draws+losses === 0)
+        } else if (draws+losses === 0) {
           return "perfect"
-        else
+        } else {
           return (wins/(wins + losses)*100).toFixed(2) + "%"
+        }
       }
     },
+
     isFull() {
       return this.guest !== null
     },
+
     getTimeMins() {
-      return (this.timeInput/60).toFixed(0)
+      return (this.timeInput / 60).toFixed(0)
     },
+
     getHostPoints() {
       if(this.host !== null)
         return (this.host.points).toFixed(2)
     },
+
     getGuestPoints() {
       if(this.guest !== null)
         return (this.guest.points).toFixed(2)
     }
   },
+
   async created() {
     const roomID = await this.$route.params.id
     this.roomID = roomID
-    this.roomLink = "http://localhost:8080/#/room/" + roomID
+    this.roomLink = "https://check-with-me.web.app/#/room/" + roomID
     const room = await getSingleGame(roomID)
     this.room = room
-    //console.log(room)
 
     const host = await getSingleUser(room.host_user.id)
     this.host = host
-    //console.log(host)
-    if(firebase.auth().currentUser.uid === room.host_user.id)
+
+    if (firebase.auth().currentUser.uid === room.host_user.id) {
       this.isOwner = 1
-    else
+    } else {
       this.isOwner = 0
+    }
 
     const timer = await getSingleTimer(room.timer_id.id)
     this.timer = timer
     this.timeInput = timer.host_timeLeft
-    //console.log(timer)
 
-    if(room.other_user.id !== "nil") {
+    if (room.other_user.id !== "nil") {
       const guest = await getSingleUser(room.other_user.id)
       this.guest = guest
-      //console.log(guest)
     }
   },
   methods: {
-    async destroyRoom () {
-      //console.log(this.roomID)
+    ...mapActions([
+      'aInitGame'
+    ]),
+
+    async destroyRoom() {
       await deleteGame(this.roomID)
-
+      this.gameUnsubscribe()
+      this.timeUnsubscribe()
       this.$router.push({ path: '/'})
     },
-    async leaveRoom () {
+
+    async leaveRoom() {
       await removeGuest(this.roomID)
-
+      this.gameUnsubscribe()
+      this.timeUnsubscribe()
       this.$router.push({ path: '/'})
     },
+
     putTime(time) {
       this.timeInput = time
     },
-    goToGame() {
-      //do logic here
-      this.$router.push({ path: '/play'})
+    async goToGame() {
+      let room_id = this.roomID
+
+      let isHostWhite
+      if(this.hostColor === 'w')
+        isHostWhite = true
+      else if(this.hostColor === 'b')
+        isHostWhite = false
+      else{
+        let rand = Math.random() < 0.5
+        //console.log(rand)
+        isHostWhite = rand
+      }
+
+      await setWhitePlayer(room_id, isHostWhite)
+      await this.aInitGame(room_id)
+      await setGameStarted(room_id, true)
+      this.$router.push({ path: `/play/${ room_id }`})
     },
+
     copyLink() {
       const el = document.createElement('textarea');
       el.value = this.roomLink;
@@ -219,47 +291,59 @@ export default {
       document.execCommand('copy');
       document.body.removeChild(el);
     },
+
     async updateTimer() {
       changeTime(this.timeInput, this.room.timer_id.id)
     },
+
     kickLeave() {
       this.gameUnsubscribe()
       this.timeUnsubscribe()
-
       this.$router.push({ path: '/'})
     }
   },
+
   async mounted() {
     const roomID = await this.$route.params.id
     const game = await getSingleGame(roomID)
     const timerID = game.timer_id.id
 
     this.gameUnsubscribe = gamesCollection
-    .doc(roomID)
-    .onSnapshot(async doc => {
-      if(doc.exists) {
-        if(this.isOwner == 0 && doc.data().other_user.id === "nil"){
-          this.$router.push({ path: '/'})
+      .doc(roomID)
+      .onSnapshot(async doc => {
+        if (doc.exists) {
+          const gameStartedFirstTime = 
+            this.isOwner === 0 && 
+            doc.data().game_started && 
+            doc.data().is_first_run
+
+          if (this.isOwner == 0 && doc.data().other_user.id === "nil"){
+            this.$router.push({ path: '/'})
+          } else if (gameStartedFirstTime) { // Route to the game proper when the other player has started 
+            await this.aInitGame(roomID)
+            this.$router.push({ path: `/play/${ roomID }`})
+            this.gameUnsubscribe()  // Prevent rerouting to the same path every time
+          } else {
+            const guest = await getSingleUser(doc.data().other_user.id)
+            this.guest = guest
+          }
         } else {
-          const guest = await getSingleUser(doc.data().other_user.id)
-          this.guest = guest
+          if (this.isOwner == 0) {
+            this.isKicked = true
+          } else {
+            console.log('doc no exist')
+            // this.$router.push({ path: '/'})
+          }
         }
-      } else{
-        if(this.isOwner == 0)
-        {
-          this.isKicked = true
-        } else{
-          this.$router.push({ path: '/'})
-        }
-      }
-    })
+      })
 
     this.timeUnsubscribe = timersCollection
-    .doc(timerID)
-    .onSnapshot(async doc => {
-      if(doc.exists)
-        this.timeInput = doc.data().host_timeLeft
-    })
+      .doc(timerID)
+      .onSnapshot(async doc => {
+        if (doc.exists) {
+          this.timeInput = doc.data().host_timeLeft
+        }
+      })
   }
 }
 </script>
@@ -441,5 +525,60 @@ export default {
     justify-content:center;
     font-size:1em;
     font-weight: bold;
+}
+
+.begin-modal-row{
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.begin-modal-column{
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+  text-align: center;
+}
+.square {
+  height: 80px;
+  width: 80px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.chip {
+  z-index: 2;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.black-chip {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(48, 48, 48, 0.74) 0%, #424242 100%);
+  border: 10px solid #3A3A3A;
+}
+.white-chip {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.74) 0%, #D0D0D0 100%);
+  border: 12px solid #EDEDED;
+}
+.rand-chip {
+  background: radial-gradient(50% 50% at 50% 50%, #979797 0%, #979797 100%);
+  border: 12px solid #979797;
+}
+.questionMark {
+  height: 100%;
+  width: 100%;
 }
 </style>

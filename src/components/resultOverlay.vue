@@ -1,15 +1,14 @@
 <template>
 <div>
   <h1 class="overlay-text" id="win-resign-message"> {{ winnerResignMessage }} </h1>
+  <h1 class="overlay-text" id="win-logout-message"> {{ winnerLogoutMessage }} </h1>
   <h1 class="overlay-text" id="win-message"> {{ winnerMessage }} </h1>
-  <b-button @click="requestRematch" class="overlay-text overlay-button" id="request-rematch">New Game</b-button>
-  <b-button @click="returnToLobby" class="overlay-text overlay-button" id="return-to-lobby">Return to Lobby</b-button>
-
-  <h5 class="overlay-text mt-5">these are for testing only, remove upon deployment</h5>
-  <b-button @click="startNewReg" class="overlay-text overlay-button" variant="success">Start new regular game</b-button>
-  <b-button @click="startNewWin" class="overlay-text overlay-button" variant="info">Start new winning game</b-button>
-  <b-button @click="startNewWinWhiteStuck" class="overlay-text overlay-button" variant="info">Start new winning game with white stuck</b-button>
-  <b-button @click="resetUserPoints" class="overlay-text overlay-button" variant="danger">Reset user points</b-button>
+  <b-button @click="requestRematch" class="overlay-text overlay-button" id="request-rematch" v-if="!didEnemyLogout">
+    New Game
+  </b-button>
+  <b-button @click="returnToLobby" class="overlay-text overlay-button" id="return-to-lobby">
+    Return to Lobby
+  </b-button>
 </div>
 </template>
 
@@ -17,16 +16,17 @@
 import { mapGetters, mapActions } from 'vuex'
 import { 
   auth, 
-  gamesCollection, 
-  usersCollection, 
-  timersCollection
+  gamesCollection
 } from '@/firebase'
 
 export default {
   name: 'ResultOverlay',
+  props: ['didEnemyLogout'],
   computed: {
     ...mapGetters({
-      winner: 'getWinner'
+      winner: 'getWinner',
+      hostUserID: 'getHostUser',
+      currentGame: 'getCurrentGame'
     }), 
 
     winnerMessage () {
@@ -48,92 +48,72 @@ export default {
       else
         return ''
     },
+
+    winnerLogoutMessage() {
+      if (this.didEnemyLogout) {
+        return this.winner === 'B' ? 
+          'White has logged out from the game!' : 
+          'Black has logged out from the game!'
+      }
+    },
+
+    isSelfHost() {
+      return auth.currentUser.uid === this.hostUserID
+    }
   },
   methods: {
     ...mapActions([
       'aSetActiveGame', 
       'aResetGame',
-      'aSetWinner'
+      'aSetWinner',
+      'aDeleteGame',
+      'aDeleteTimer'
     ]),
-    requestRematch () {
-      // this.aResetGame()
-      this.aSetActiveGame(true)
-      // this.$emit("closeOverlay")
-    },
-    returnToLobby () {
-      // this.$emit("closeOverlay")
-    },
 
-    // TODO: remove this upon deployment
-    async startNewReg () {
-      this.aSetActiveGame(true)
-      this.aSetWinner('N')
-      
+    async requestRematch() {
+      const gameDoc = await gamesCollection.doc(this.currentGame).get()
+      const bRematchIsRequested = gameDoc.data().rematch_requested !== "none"
+      const rematchRequestedBy = this.isSelfHost ? "host" : "other"
+
+      if (bRematchIsRequested) {
+        return
+      } else {
+        await gamesCollection
+          .doc(this.currentGame)
+          .update({
+            rematch_requested: rematchRequestedBy
+          })
+      }
+
       await gamesCollection
-            .doc("VUqGnWBLmgulz3X5O13h")
-            .update({
-              board_state: "[FEN \"O:W1,3,5,7,10,12,14,16,17,19,21,23:B42,44,46,48,49,51,53,55,58,60,62,64\"]",
-              black_count: 12,
-              white_count: 12,
-              last_player_moved: "LLyi0mw1IuaFX1AZeCYP0NcWdL83",
-              resign: "none"
-            })
+        .doc(this.currentGame)
+        .update({
+          board_state: "[FEN \"O:W1,3,5,7,10,12,14,16,17,19,21,23:B42,44,46,48,49,51,53,55,58,60,62,64\"]",
+          black_count: 12,
+          white_count: 12,
+          last_player_moved: lastPlayerMoved
+        })
     },
 
-    async startNewWin () {
-      this.aSetActiveGame(true)
-      this.aSetWinner('N')
-      
-      await gamesCollection
-            .doc("VUqGnWBLmgulz3X5O13h")
-            .update({
-              board_state: "[FEN \"X:W46:B55,58\"]",
-              black_count: 2,
-              white_count: 1,
-              last_player_moved: "LLyi0mw1IuaFX1AZeCYP0NcWdL83",
-              resign: "none"
-            })
-    },
+    async returnToLobby() {
+      if (this.didEnemyLogout) { // Coming from enemy premature logout
+        await this.aDeleteGame()
+        await this.aDeleteTimer()
+        this.$router.push('/')
+      } else { // Coming from the end of the game
+        const gameDoc = await gamesCollection.doc(this.currentGame).get()
+        const enemyLeft = gameDoc.data().enemy_left !== "none" || gameDoc.data().enemy_left_confirmed
 
-    async startNewWinWhiteStuck () {
-      this.aSetActiveGame(true)
-      this.aSetWinner('N')
-      
-      await gamesCollection
-            .doc("VUqGnWBLmgulz3X5O13h")
+        if (enemyLeft) {
+          return
+        } else {
+          await gamesCollection
+            .doc(this.currentGame)
             .update({
-              board_state: "[FEN \"X:W32,26:B64,62,60,55,46,42,39,37,K30\"]",
-              black_count: 9,
-              white_count: 2,
-              last_player_moved: "LLyi0mw1IuaFX1AZeCYP0NcWdL83",
-              resign: "none"
+              enemy_left: auth.currentUser.uid
             })
-    },
-
-    async resetUserPoints () {
-      await usersCollection
-            .doc("LLyi0mw1IuaFX1AZeCYP0NcWdL83")
-            .update({
-              draw_black: 0,
-              draw_white: 0,
-              wins_black: 0,
-              wins_white: 0,
-              loss_black: 0,
-              loss_white: 0,
-              points: 120
-            })
-
-      await usersCollection
-            .doc("nkR8RnJ4GqSJHCaTY89HLrywpt13")
-            .update({
-              draw_black: 0,
-              draw_white: 0,
-              wins_black: 0,
-              wins_white: 0,
-              loss_black: 0,
-              loss_white: 0,
-              points: 100
-            })
+        }
+      }
     }
   }
 }
@@ -155,6 +135,10 @@ export default {
   margin-bottom: 25px;
 }
 #win-resign-message {
+  font-size: 32px;
+  text-decoration: underline;
+}
+#win-logout-message {
   font-size: 32px;
   text-decoration: underline;
 }

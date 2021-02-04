@@ -3,16 +3,16 @@ import actions from './actions'
 import mutations from './mutations'
 
 const state = {
-  currentGameID: 'VUqGnWBLmgulz3X5O13h',
+  currentGameID: "",  //'VUqGnWBLmgulz3X5O13h',
+  timerID: "",
   boardState: '',
-  hostUser: 'ktreyVNxpqRTE7mQPjreB0iWyFi1',
-  otherUser: '4pSu14srMSelGWQkSgGpRsA2jGf1',
+  hostUser: "",       //'ktreyVNxpqRTE7mQPjreB0iWyFi1',
+  otherUser: "",      //'4pSu14srMSelGWQkSgGpRsA2jGf1',
   enemyUsername: '',
   hostTimeLeft: 0,
   otherTimeLeft: 0,
   isHostWhite: true,
-  lastPlayerMoved: '',
-  drawCounter: 0
+  lastPlayerMoved: ''
 }
 
 export default {

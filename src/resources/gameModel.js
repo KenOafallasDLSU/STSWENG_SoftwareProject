@@ -93,13 +93,22 @@ export const addGameDoc = ((roomName, roomType, timerID) => {
     is_host_white: true,
     is_public: roomType === "true",
     is_first_run: true,
-    last_player_moved: "white",
+    last_player_moved: "",
     room_link: "link",
     room_name: roomName,
     room_name_lc: roomName.toLowerCase(),
     timer_id: db.doc('timers/' + timerID),
     white_count: 12,
-    black_count: 12
+    black_count: 12,
+    game_started: false,
+    enemy_left: "none",
+    enemy_left_confirmed: false,
+    rematch_accepted: false,
+    rematch_requested: "none",
+    rematch_time_selected: false,
+    resign: "none",
+    draw: false,
+    draw_offered_by: ""
   })
 })
 
@@ -113,10 +122,9 @@ export const checkNameUnique = (async roomName => {
 export const checkUserGame = (async (userID) => {
   //build reference to user
   const userDocRef = usersCollection.doc(userID)
-  console.log(userDocRef)
   const queryHost = gamesCollection.where("host_user", "==", userDocRef)
   const docHost = await queryHost.get()
-  console.log(docHost)
+
   if (docHost.empty) {
     const queryGuest = gamesCollection.where("other_user", "==", userDocRef)
     const docGuest = await queryGuest.get()
@@ -132,13 +140,10 @@ export const checkUserGame = (async (userID) => {
 })
 
 export const deleteGame = (async roomID => {
-  console.log(roomID)
   const query = timersCollection.where("game_id", "==", roomID)
   const doc = await query.get()
-  console.log(doc)
   const timerID = doc.docs[0].id
-
-
+  
   await timersCollection.doc(timerID).delete()
   await gamesCollection.doc(roomID).delete()
 })
@@ -154,6 +159,30 @@ export const removeGuest = (gameID => {
   .doc(gameID)
   .update({
     other_user:  db.doc('users/' + 'nil')
+  })
+})
+
+export const setWhitePlayer = (async (gameID, isHostWhite) => {
+  const game = await getSingleGame(gameID)
+  let lastPlayerMoved
+  if(isHostWhite)
+    lastPlayerMoved = game.other_user.id
+  else
+    lastPlayerMoved = game.host_user.id
+
+  gamesCollection
+  .doc(gameID)
+  .update({
+    is_host_white: isHostWhite,
+    last_player_moved: lastPlayerMoved
+  })
+})
+
+export const setGameStarted = ((gameID, gameStarted) => {
+  gamesCollection
+  .doc(gameID)
+  .update({
+    game_started: gameStarted
   })
 })
 
